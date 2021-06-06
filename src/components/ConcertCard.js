@@ -31,4 +31,5 @@ const ConcertCardWrapper = styled.section`
   padding: 0px;
   padding-left: 10px;
   width: 98%;
+  background: antiquewhite;
 `;
