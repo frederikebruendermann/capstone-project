@@ -2,8 +2,8 @@ import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
 ConcertCard.propTypes = {
-  concertDate: PropTypes.string,
-  artistName: PropTypes.string,
+  concertDate: PropTypes.string.isRequired,
+  artistName: PropTypes.string.isRequired,
   concertLocation: PropTypes.string,
 };
 
@@ -23,10 +23,12 @@ export default function ConcertCard({
 }
 
 const ConcertCardWrapper = styled.section`
-  margin: 20px;
+  margin: 5px;
   border-width: 3px;
   border-style: solid;
   border-color: black;
-  padding: 10px;
-  border-radius: 3em;
+  border-radius: 1em;
+  padding: 0px;
+  padding-left: 10px;
+  width: 98%;
 `;
