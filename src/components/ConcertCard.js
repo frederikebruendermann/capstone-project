@@ -15,7 +15,8 @@ export default function ConcertCard({
   return (
     <ConcertCardWrapper>
       <p>
-        {concertDate} - {artistName}, {concertLocation}
+        {concertDate} <br />
+        {artistName}, {concertLocation}
       </p>
     </ConcertCardWrapper>
   );
