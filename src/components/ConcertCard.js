@@ -23,7 +23,7 @@ export default function ConcertCard({
 }
 
 const ConcertCardWrapper = styled.section`
-  margin: 0;
+  margin: 20px;
   border-width: 3px;
   border-style: solid;
   border-color: black;
