@@ -3,8 +3,8 @@ import Title from "./Title";
 
 describe("Title", () => {
   it("shows the title of a page", () => {
-    render(<Title pageName={"Suche"} />);
+    render(<Title pageName={"Suche"}></Title>);
 
-    expect(screen.getByText("Suche")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
   });
 });

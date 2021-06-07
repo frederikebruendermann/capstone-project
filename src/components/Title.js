@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
 Title.propTypes = {
-  pageName: PropTypes.string,
+  pageName: PropTypes.string.isRequired,
 };
 
 export default function Title({ pageName }) {

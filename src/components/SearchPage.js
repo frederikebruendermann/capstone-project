@@ -11,6 +11,7 @@ SearchPage.propTypes = {
       concertDate: PropTypes.string,
       artistName: PropTypes.string,
       concertLocation: PropTypes.string,
+      id: PropTypes.string,
     })
   ),
 };
@@ -25,6 +26,7 @@ export default function SearchPage({ pageName }) {
             concertDate={concerts.concertDate}
             artistName={concerts.artistName}
             concertLocation={concerts.concertLocation}
+            key={concerts.id}
           />
         ))}
       </ConcertList>

@@ -2,9 +2,9 @@ import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
 ConcertCard.propTypes = {
-  concertDate: PropTypes.string,
-  artistName: PropTypes.string,
-  concertLocation: PropTypes.string,
+  concertDate: PropTypes.string.isRequired,
+  artistName: PropTypes.string.isRequired,
+  concertLocation: PropTypes.string.isRequired,
 };
 
 export default function ConcertCard({
@@ -13,7 +13,7 @@ export default function ConcertCard({
   concertLocation,
 }) {
   return (
-    <ConcertCardWrapper>
+    <Wrapper>
       <p>
         {concertDate}
         <br />
@@ -22,15 +22,14 @@ export default function ConcertCard({
         <br />
         {concertLocation}
       </p>
-    </ConcertCardWrapper>
+    </Wrapper>
   );
 }
 
-const ConcertCardWrapper = styled.li`
+const Wrapper = styled.li`
   margin: 5px;
   border: 3px solid black;
   border-radius: 1em;
-  padding: 0px;
   padding-left: 10px;
   background: antiquewhite;
   list-style: none;
