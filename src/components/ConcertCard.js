@@ -1,5 +1,6 @@
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
+import "../GlobalStyles";
 
 ConcertCard.propTypes = {
   concertDate: PropTypes.string.isRequired,
@@ -29,10 +30,10 @@ export default function ConcertCard({
 
 const Wrapper = styled.li`
   margin: 3px;
-  border: 3px solid black;
+  border: 1px solid white;
   border-radius: 1em;
-  padding: 5px;
-  background: antiquewhite;
+  padding: 10px;
+  background: var(--white);
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -40,7 +41,8 @@ const Wrapper = styled.li`
   grid-template-areas:
     "Date artistName artistName"
     ". Location Location";
-  gap: 6px;
+  gap: 8px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
 `;
 
 const DateStyle = styled.span`

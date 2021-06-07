@@ -16,6 +16,16 @@ button,
 textarea {
   font-size: inherit;
 }
+
+:root{
+  --blue: #1C85E8;
+  --peach: #FF896D;
+  --light-peach: #1C85E8;
+  --light-blue: #ACD3F8;
+  --white: #FFFFFF;
+  --black: #212121;
+}
+
 `;
 
 export default GlobalStyle;

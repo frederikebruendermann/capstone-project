@@ -12,5 +12,5 @@ export default function Title({ pageName }) {
 const PageName = styled.h1`
   display: grid;
   justify-content: center;
-  padding-top: 20px;
+  color: var(--black);
 `;
