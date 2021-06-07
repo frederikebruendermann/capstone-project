@@ -25,12 +25,9 @@ export default function ConcertCard({
 
 const ConcertCardWrapper = styled.section`
   margin: 5px;
-  border-width: 3px;
-  border-style: solid;
-  border-color: black;
+  border: 3px solid black;
   border-radius: 1em;
   padding: 0px;
   padding-left: 10px;
-  width: 98%;
   background: antiquewhite;
 `;
