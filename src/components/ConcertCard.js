@@ -14,20 +14,24 @@ export default function ConcertCard({
 }) {
   return (
     <ConcertCardWrapper>
-      <p>{concertDate}</p>
-      <br />
       <p>
-        {artistName}, {concertLocation}
+        {concertDate}
+        <br />
+        <br />
+        {artistName},
+        <br />
+        {concertLocation}
       </p>
     </ConcertCardWrapper>
   );
 }
 
-const ConcertCardWrapper = styled.section`
+const ConcertCardWrapper = styled.li`
   margin: 5px;
   border: 3px solid black;
   border-radius: 1em;
   padding: 0px;
   padding-left: 10px;
   background: antiquewhite;
+  list-style: none;
 `;

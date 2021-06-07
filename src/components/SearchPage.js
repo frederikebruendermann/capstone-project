@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 import Title from "./Title";
 import ConcertCard from "./ConcertCard";
+import concerts from "../data.json";
 
 SearchPage.propTypes = {
   pageName: PropTypes.string,
@@ -14,7 +15,7 @@ SearchPage.propTypes = {
   ),
 };
 
-export default function SearchPage({ concerts, pageName }) {
+export default function SearchPage({ pageName }) {
   return (
     <>
       <Title pageName={pageName} />
@@ -31,8 +32,10 @@ export default function SearchPage({ concerts, pageName }) {
   );
 }
 
-const ConcertList = styled.section`
+const ConcertList = styled.ul`
   display: grid;
+  justify-content: center;
+  padding: 5px;
   ::-webkit-scrollbar {
     width: 10px;
   }
