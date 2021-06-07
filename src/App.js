@@ -1,5 +1,7 @@
+import SearchPage from "./components/SearchPage";
+
 function App() {
-  return <div className="App">Hello World</div>;
+  return <SearchPage />;
 }
 
 export default App;

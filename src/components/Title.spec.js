@@ -1,11 +1,10 @@
+import { render, screen } from "@testing-library/react";
+import Title from "./Title";
 
-    import {render, screen} from '@testing-library/react'
-    import Title from './Title'
-      
-    describe('Title', () => {
-        it('renders', () => {
-            render(<Title />)
-            expect(screen.getByText('Title')).toBeInTheDocument()
-        })
-    })
-          
+describe("Title", () => {
+  it("shows the title of a page", () => {
+    render(<Title pageName={"Suche"} />);
+
+    expect(screen.getByText("Suche")).toBeInTheDocument();
+  });
+});

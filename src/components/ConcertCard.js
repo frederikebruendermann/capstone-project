@@ -2,8 +2,8 @@ import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 
 ConcertCard.propTypes = {
-  concertDate: PropTypes.string.isRequired,
-  artistName: PropTypes.string.isRequired,
+  concertDate: PropTypes.string,
+  artistName: PropTypes.string,
   concertLocation: PropTypes.string,
 };
 
@@ -14,8 +14,9 @@ export default function ConcertCard({
 }) {
   return (
     <ConcertCardWrapper>
+      <p>{concertDate}</p>
+      <br />
       <p>
-        {concertDate} <br />
         {artistName}, {concertLocation}
       </p>
     </ConcertCardWrapper>
