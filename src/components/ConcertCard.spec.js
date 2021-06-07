@@ -12,7 +12,7 @@ describe("ConcertCard", () => {
       />
     );
     expect(screen.getByRole("listitem")).toBeInTheDocument();
-    // expect(screen.getByText("Thees")).toBeInTheDocument();
+    expect(screen.getByText("Thees")).toBeInTheDocument();
     // expect(screen.getByText("26.06.2021")).toBeInTheDocument();
     // expect(screen.getByText("Pier2")).toBeInTheDocument();
   });
