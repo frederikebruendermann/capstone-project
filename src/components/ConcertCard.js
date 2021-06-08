@@ -1,11 +1,17 @@
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 import "../GlobalStyles";
+import "../data.json";
 
 ConcertCard.propTypes = {
-  concertDate: PropTypes.string.isRequired,
-  artistName: PropTypes.string.isRequired,
-  concertLocation: PropTypes.string.isRequired,
+  concerts: PropTypes.arrayOf(
+    PropTypes.shape({
+      concertDate: PropTypes.string,
+      artistName: PropTypes.string,
+      concertLocation: PropTypes.string,
+      id: PropTypes.string,
+    })
+  ),
 };
 
 export default function ConcertCard({
