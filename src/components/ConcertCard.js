@@ -52,17 +52,17 @@ const Wrapper = styled.li`
 `;
 
 const DateStyle = styled.span`
-  font-size: 20px;
+  font-size: 15px;
   grid-area: Date;
 `;
 
 const ArtistStyle = styled.span`
-  font-size: 20px;
+  font-size: 15px;
   grid-area: artistName;
   justify-self: start;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 25ch;
+  max-width: 20ch;
   text-overflow: ellipsis;
 `;
 
