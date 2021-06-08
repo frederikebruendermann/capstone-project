@@ -52,21 +52,21 @@ const Wrapper = styled.li`
 `;
 
 const DateStyle = styled.span`
-  font-size: 15px;
+  font-size: 13px;
   grid-area: Date;
 `;
 
 const ArtistStyle = styled.span`
-  font-size: 15px;
+  font-size: 13px;
   grid-area: artistName;
   justify-self: start;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 20ch;
+  max-width: 25ch;
   text-overflow: ellipsis;
 `;
 
 const LocationStyle = styled.span`
-  font-size: 15px;
+  font-size: 13px;
   grid-area: Location;
 `;
