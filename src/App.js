@@ -1,4 +1,4 @@
-import SearchPage from "../src/components/SearchPage";
+import SearchPage from "../src/pages/SearchPage";
 import concerts from "../src/data.json";
 
 export default function App() {

@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 import PropTypes from "prop-types";
-import Title from "./Title";
-import ConcertCard from "./ConcertCard";
+import Title from "../components/Title";
+import ConcertCard from "../components/ConcertCard";
 import concerts from "../data.json";
 
 SearchPage.propTypes = {
