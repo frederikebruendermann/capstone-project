@@ -30,6 +30,7 @@ export default function ConcertCard({
       <DateStyle>{Date}</DateStyle>
       <ArtistStyle>{artistName}</ArtistStyle>
       <LocationStyle>{Location}</LocationStyle>
+      {/* <image>{concerts.image}</image> */}
     </Wrapper>
   );
 }
