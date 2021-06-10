@@ -18,25 +18,8 @@ SearchPage.propTypes = {
 };
 
 export default function SearchPage({ pageName }) {
-  //const [concerts, setConcerts] = useState([]);
   const concerts = data.map((item) => getConcertDetails(item));
-  // setConcerts(getConcertDetails(data));
 
-  // useEffect(() => {
-  //   fetch("../data.json")
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       Promise.all(
-  //         res.results.map((concert) =>
-  //           fetch(concert.json).then((res) => res.json())
-  //         )
-  //       ).then((res) => {
-  //         const concerts = res.map(getConcertDetails);
-  //         setConcerts(concerts);
-  //       });
-  //     })
-  //     .catch(console.error);
-  // });
   console.log(concerts);
 
   return (
