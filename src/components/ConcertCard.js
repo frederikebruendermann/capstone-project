@@ -6,29 +6,25 @@ import "../data.json";
 ConcertCard.propTypes = {
   concerts: PropTypes.arrayOf(
     PropTypes.shape({
-      concertDate: PropTypes.string,
-      artistName: PropTypes.string,
-      concertLocation: PropTypes.string,
+      date: PropTypes.string,
+      artist: PropTypes.string,
+      location: PropTypes.string,
       id: PropTypes.string,
     })
   ),
 };
 
-export default function ConcertCard({
-  concertDate,
-  artistName,
-  concertLocation,
-}) {
-  const createDate = concertDate.split(", ");
+export default function ConcertCard({ date, artist, location }) {
+  const createDate = date.split(", ");
   const Date = [createDate[1].replace(",", " ")];
 
-  const createLocation = concertLocation.split(",");
+  const createLocation = location.split(",");
   const Location = [createLocation[1].replace(",", " ")];
 
   return (
     <Wrapper>
       <DateStyle>{Date}</DateStyle>
-      <ArtistStyle>{artistName}</ArtistStyle>
+      <ArtistStyle>{artist}</ArtistStyle>
       <LocationStyle>{Location}</LocationStyle>
       {/* <image>{concerts.image}</image> */}
     </Wrapper>

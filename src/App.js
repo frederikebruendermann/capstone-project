@@ -7,9 +7,9 @@ export default function App() {
   return (
     <SearchPage
       pageName={pageName}
-      artistName={concerts.artistName}
-      concertDate={concerts.concertDate}
-      concertLocation={concerts.concertLocation}
+      artist={concerts.artist}
+      date={concerts.date}
+      location={concerts.location}
     />
   );
 }

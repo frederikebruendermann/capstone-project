@@ -8,9 +8,9 @@ SearchPage.propTypes = {
   pageName: PropTypes.string,
   concerts: PropTypes.arrayOf(
     PropTypes.shape({
-      concertDate: PropTypes.string,
-      artistName: PropTypes.string,
-      concertLocation: PropTypes.string,
+      date: PropTypes.string,
+      artist: PropTypes.string,
+      location: PropTypes.string,
       id: PropTypes.string,
     })
   ),
@@ -23,9 +23,9 @@ export default function SearchPage({ pageName }) {
       <ConcertList>
         {concerts.map((concerts) => (
           <ConcertCard
-            concertDate={concerts.concertDate}
-            artistName={concerts.artistName}
-            concertLocation={concerts.concertLocation}
+            date={concerts.date}
+            artist={concerts.artistName}
+            location={concerts.location}
             key={concerts.id}
           />
         ))}

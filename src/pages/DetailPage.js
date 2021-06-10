@@ -5,12 +5,13 @@ import Title from "../components/Title";
 DetailPage.propTypes = {
   pageName: PropTypes.string.isRequired,
   concerts: PropTypes.array,
+  image: PropTypes.node,
 };
 export default function DetailPage({ concerts, pageName }) {
   //   const {
-  //     concertDate,
-  //     artistName,
-  //     concertLocation,
+  //     date,
+  //     artist,
+  //     location,
   //     link,
   //     price,
   //     image,
@@ -37,7 +38,7 @@ export default function DetailPage({ concerts, pageName }) {
           <FactsData>
             Pier 2, Bremen
             <br /> 26.06.2021, 20Uhr
-            <br /> www.eventim.de
+            <br /> <a href="www.eventim.de">www.eventim.de</a>
           </FactsData>
         </DetailsContainer>
       </Wrapper>
@@ -74,7 +75,8 @@ const DetailsContainer = styled.div`
   display: grid;
   grid-area: Details;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "Facts FactsData;
 `;
 
 const Facts = styled.span``;
