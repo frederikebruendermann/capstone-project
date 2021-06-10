@@ -1,7 +1,18 @@
+import styled from "styled-components/macro";
+import PropTypes from "prop-types";
 
-    import styled from 'styled-components/macro'
-      
-    export default function Button () {
-        return <div>Button</div>
-    }
-          
+Button.propTypes = {
+  children: PropTypes.node,
+  isActive: PropTypes.bool,
+  onClick: PropTypes.func,
+};
+
+export default function Button(props) {
+  return <ButtonStyled {...props} />;
+}
+
+const ButtonStyled = styled.button`
+  border-style: none;
+  padding: 1em;
+  background-color: ${(props) => (props.isActive ? "lightgrey" : "white")};
+`;

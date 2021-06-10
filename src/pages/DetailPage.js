@@ -1,44 +1,46 @@
 import PropTypes from "prop-types";
 import styled from "styled-components/macro";
 import Title from "../components/Title";
+import Button from "../components/Button";
 
 DetailPage.propTypes = {
-  pageName: PropTypes.string.isRequired,
-  concerts: PropTypes.array,
+  date: PropTypes.string,
+  artist: PropTypes.string,
+  location: PropTypes.string,
+  id: PropTypes.string,
+  price: PropTypes.string,
   image: PropTypes.node,
+  onNavigate: PropTypes.func,
 };
-export default function DetailPage({ concerts, pageName }) {
-  //   const {
-  //     date,
-  //     artist,
-  //     location,
-  //     link,
-  //     price,
-  //     image,
-  //   } = concerts;
 
+export default function DetailPage({
+  date,
+  artist,
+  location,
+  price,
+  image,
+  onNavigate,
+}) {
   return (
     <div>
       <Title pageName={"Details"}></Title>
+      <Button onClick={onNavigate}>&lt;--</Button>
       <Wrapper>
-        <Image
-          img
-          src="https://images.unsplash.com/photo-1499424017184-418f6808abf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2700&q=80"
-          alt=""
-        />
+        <Image img src={image} alt="" />
         <ArtistContainer>
-          <span>Thees Uhlmann</span>
+          <span>{artist}</span>
         </ArtistContainer>
         <DetailsContainer>
           <Facts>
             Location:
             <br /> Termin:
             <br /> Tickets:
+            <br /> Preis:
           </Facts>
           <FactsData>
-            Pier 2, Bremen
-            <br /> 26.06.2021, 20Uhr
-            <br /> <a href="www.eventim.de">www.eventim.de</a>
+            {location}
+            <br /> {date}
+            <br /> {price}
           </FactsData>
         </DetailsContainer>
       </Wrapper>

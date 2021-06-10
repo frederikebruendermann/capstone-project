@@ -15,9 +15,10 @@ SearchPage.propTypes = {
       id: PropTypes.string,
     })
   ),
+  onNavigate: PropTypes.func,
 };
 
-export default function SearchPage({ pageName }) {
+export default function SearchPage({ pageName, onNavigate }) {
   const concerts = data.map((item) => getConcertDetails(item));
 
   console.log(concerts);
@@ -32,6 +33,7 @@ export default function SearchPage({ pageName }) {
             artist={concerts.artist}
             location={concerts.location}
             key={concerts.id}
+            onlick={onNavigate}
           />
         ))}
       </ConcertList>
