@@ -29,6 +29,7 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
           <FactsData>
             {concert.location}
             <br /> {concert.date}
+            <br /> www.eventim.de
             <br /> {concert.price}
           </FactsData>
         </DetailsContainer>
