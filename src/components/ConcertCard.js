@@ -18,7 +18,13 @@ ConcertCard.propTypes = {
   onClick: PropTypes.func,
 };
 
-export default function ConcertCard({ date, artist, location, onClick }) {
+export default function ConcertCard({
+  date,
+  artist,
+  location,
+  image,
+  onClick,
+}) {
   const createDate = date.split(", ");
   const Date = [createDate[1].replace(",", " ")];
 
@@ -27,10 +33,12 @@ export default function ConcertCard({ date, artist, location, onClick }) {
 
   return (
     <Wrapper onClick={onClick}>
-      <DateStyle>{Date}</DateStyle>
-      <ArtistStyle>{artist}</ArtistStyle>
-      <LocationStyle>{Location}</LocationStyle>
-      {/* <image>{concerts.image}</image> */}
+      <TextStyle>
+        <DateStyle>{Date}</DateStyle>
+        <ArtistStyle>{artist}</ArtistStyle>
+        <LocationStyle>{Location}</LocationStyle>
+      </TextStyle>
+      <Image src={image} alt="" />
     </Wrapper>
   );
 }
@@ -38,18 +46,30 @@ export default function ConcertCard({ date, artist, location, onClick }) {
 const Wrapper = styled(Button)`
   margin: 3px;
   border: 1px solid white;
-  border-radius: 1em;
+  width: 50vh;
+  border-radius: 10px;
   padding: 10px;
   background: var(--white);
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 75% 25%;
+  grid-template-rows: 10%;
+  gap: 0px 0px;
+  grid-template-areas: "Text Image";
+  box-shadow: 0 0.2px 2px 0 #dbd7d7, 0 1px 1px 0 #dbd7d7;
+`;
+
+const TextStyle = styled.section`
+  grid-area: Text;
+  text-align: left;
+  display: grid;
+  justify-self: start;
+  grid-template-rows: 10px 30px 10px;
+  gap: 5px 5px;
   grid-template-areas:
-    "Date artistName artistName"
-    ". Location Location";
-  gap: 8px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    "Date"
+    "Artist"
+    "Location";
 `;
 
 const DateStyle = styled.span`
@@ -57,17 +77,28 @@ const DateStyle = styled.span`
   grid-area: Date;
 `;
 
-const ArtistStyle = styled.span`
-  font-size: 13px;
-  grid-area: artistName;
+const ArtistStyle = styled.div`
+  font-size: 15px;
+  grid-area: Artist;
   justify-self: start;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 25ch;
+  max-width: 24ch;
   text-overflow: ellipsis;
 `;
 
 const LocationStyle = styled.span`
   font-size: 13px;
   grid-area: Location;
+  color: var(--light-grey);
+`;
+
+const Image = styled.img`
+  height: 10vh;
+  border-radius: 11%;
+  margin: 0em 0em 0em 0.5em;
+  padding: 0px;
+  display: grid;
+  grid-area: Image;
+  place-items: right;
 `;

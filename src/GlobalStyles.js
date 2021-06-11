@@ -17,13 +17,13 @@ textarea {
   font-size: inherit;
 }
 
+
 :root{
-  --blue: #1C85E8;
-  --peach: #FF896D;
-  --light-peach: #1C85E8;
-  --light-blue: #ACD3F8;
+  --purple: #A0568D;
+  --light-grey: #A09B9B;
+  --light-purple: #ECCDDF;
   --white: #FFFFFF;
-  --black: #212121;
+  --black: #393636;
 }
 
 `;

@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import styled from "styled-components/macro";
 import Title from "../components/Title";
 import Button from "../components/Button";
+import DividingLine from "../components/DividingLine";
+import "../GlobalStyles";
 
 DetailPage.propTypes = {
   concert: PropTypes.object,
@@ -14,6 +16,7 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
     <div>
       <Title pageName={pageName}></Title>
       <Button onClick={onNavigate}>&lt;--</Button>
+      <DividingLine />
       <Wrapper>
         <ImageContainer src={concert.image} alt="" />
         <ArtistContainer>
