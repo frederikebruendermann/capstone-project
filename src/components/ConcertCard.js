@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 import "../GlobalStyles";
 import "../data.json";
+import Button from "./Button";
 
 ConcertCard.propTypes = {
   concerts: PropTypes.arrayOf(
@@ -10,11 +11,14 @@ ConcertCard.propTypes = {
       artist: PropTypes.string,
       location: PropTypes.string,
       id: PropTypes.string,
+      image: PropTypes.node,
+      price: PropTypes.string,
     })
   ),
+  onClick: PropTypes.func,
 };
 
-export default function ConcertCard({ date, artist, location }) {
+export default function ConcertCard({ date, artist, location, onClick }) {
   const createDate = date.split(", ");
   const Date = [createDate[1].replace(",", " ")];
 
@@ -22,7 +26,7 @@ export default function ConcertCard({ date, artist, location }) {
   const Location = [createLocation[1].replace(",", " ")];
 
   return (
-    <Wrapper>
+    <Wrapper onClick={onClick}>
       <DateStyle>{Date}</DateStyle>
       <ArtistStyle>{artist}</ArtistStyle>
       <LocationStyle>{Location}</LocationStyle>
@@ -31,7 +35,7 @@ export default function ConcertCard({ date, artist, location }) {
   );
 }
 
-const Wrapper = styled.li`
+const Wrapper = styled(Button)`
   margin: 3px;
   border: 1px solid white;
   border-radius: 1em;

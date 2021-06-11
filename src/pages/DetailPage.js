@@ -4,31 +4,20 @@ import Title from "../components/Title";
 import Button from "../components/Button";
 
 DetailPage.propTypes = {
-  date: PropTypes.string,
-  artist: PropTypes.string,
-  location: PropTypes.string,
-  id: PropTypes.string,
-  price: PropTypes.string,
-  image: PropTypes.node,
+  concert: PropTypes.object,
   onNavigate: PropTypes.func,
+  pageName: PropTypes.string,
 };
 
-export default function DetailPage({
-  date,
-  artist,
-  location,
-  price,
-  image,
-  onNavigate,
-}) {
+export default function DetailPage({ concert, onNavigate, pageName }) {
   return (
     <div>
-      <Title pageName={"Details"}></Title>
+      <Title pageName={pageName}></Title>
       <Button onClick={onNavigate}>&lt;--</Button>
       <Wrapper>
-        <Image img src={image} alt="" />
+        <ImageContainer src={concert.image} alt="" />
         <ArtistContainer>
-          <span>{artist}</span>
+          <span>{concert.artist}</span>
         </ArtistContainer>
         <DetailsContainer>
           <Facts>
@@ -38,9 +27,9 @@ export default function DetailPage({
             <br /> Preis:
           </Facts>
           <FactsData>
-            {location}
-            <br /> {date}
-            <br /> {price}
+            {concert.location}
+            <br /> {concert.date}
+            <br /> {concert.price}
           </FactsData>
         </DetailsContainer>
       </Wrapper>
@@ -61,7 +50,7 @@ const Wrapper = styled.div`
     "Details Details Details";
 `;
 
-const Image = styled.img`
+const ImageContainer = styled.img`
   width: 100%;
   height: auto;
   grid-area: Image;
@@ -73,13 +62,13 @@ const ArtistContainer = styled.div`
 `;
 
 const DetailsContainer = styled.div`
-  padding: 20px;
-  display: grid;
-  grid-area: Details;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 2fr;
-  grid-template-areas: "Facts FactsData;
-`;
+        padding: 20px;
+        display: grid;
+        grid-area: Details;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "Facts FactsData;
+      `;
 
 const Facts = styled.span``;
 

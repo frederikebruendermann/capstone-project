@@ -7,6 +7,6 @@ export default function getConcertDetails(concert) {
     date: concert.concertDate,
     image: concert.image,
     price: concert.price,
-    id: uuidv4(concert),
+    id: uuidv4(),
   };
 }
