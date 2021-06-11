@@ -6,5 +6,5 @@ export default function DividingLine() {
 
 const Line = styled.hr`
   border: 0.3px solid #eccddf;
-  margin: 10px;
+  margin: 10px 10px 0px 10px;
 `;

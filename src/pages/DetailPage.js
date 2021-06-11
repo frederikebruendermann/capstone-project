@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
 import styled from "styled-components/macro";
-import Title from "../components/Title";
+import Heading from "../components/Header";
 import Button from "../components/Button";
 import DividingLine from "../components/DividingLine";
-import "../GlobalStyles";
 
 DetailPage.propTypes = {
   concert: PropTypes.object,
@@ -14,9 +13,7 @@ DetailPage.propTypes = {
 export default function DetailPage({ concert, onNavigate, pageName }) {
   return (
     <div>
-      <Title pageName={pageName}></Title>
-      <Button onClick={onNavigate}>&lt;--</Button>
-      <DividingLine />
+      <Heading pageName={pageName} /> <DividingLine />
       <Wrapper>
         <ImageContainer src={concert.image} alt="" />
         <ArtistContainer>
@@ -37,15 +34,16 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
           </FactsData>
         </DetailsContainer>
       </Wrapper>
+      <Button onClick={onNavigate}>&lt;-- back </Button>
     </div>
   );
 }
 
 const Wrapper = styled.div`
   display: grid;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  margin: 0;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 15% 15% 15% 15%;
   gap: 0px 0px;
   grid-template-areas:
     "Image Image Image"
@@ -57,16 +55,17 @@ const Wrapper = styled.div`
 const ImageContainer = styled.img`
   width: 100%;
   height: auto;
+  margin: 50px 10% 0px 7%;
   grid-area: Image;
 `;
 
-const ArtistContainer = styled.div`
+const ArtistContainer = styled.p`
   grid-area: Artist;
-  padding: 20px;
+  padding: 10px 20px 0px 20px;
 `;
 
-const DetailsContainer = styled.div`
-        padding: 20px;
+const DetailsContainer = styled.p`
+        padding: 0px 20px 0px 20px;
         display: grid;
         grid-area: Details;
         grid-template-rows: 1fr;
