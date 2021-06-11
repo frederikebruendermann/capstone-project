@@ -32,7 +32,6 @@ export default function App() {
   function handleClickDetails(id) {
     const index = concerts.findIndex((concert) => concert.id === id);
     setConcertDetails(concerts[index]);
-    console.log(concerts[index]);
     setActivePage("details");
   }
 

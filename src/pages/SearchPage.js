@@ -10,7 +10,6 @@ SearchPage.propTypes = {
 };
 
 export default function SearchPage({ pageName, onNavigate, concerts }) {
-  console.log(concerts[0].id);
   return (
     <>
       <Title pageName={pageName} />
