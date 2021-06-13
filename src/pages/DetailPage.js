@@ -65,6 +65,7 @@ const ArtistContainer = styled.p`
   grid-area: Artist;
   padding: 10px 20px 0px 20px;
   letter-spacing: 0.1em;
+  margin-bottom: 20px; ;
 `;
 
 const DetailsContainer = styled.p`
