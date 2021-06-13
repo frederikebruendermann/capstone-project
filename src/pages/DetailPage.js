@@ -44,24 +44,27 @@ const Wrapper = styled.div`
   margin: 0;
   grid-template-columns: 30% 30% 30%;
   grid-template-rows: 15% 15% 15% 15%;
+  font-family: Helvetica Neue;
+  font-weight: 200;
   gap: 0px 0px;
   grid-template-areas:
     "Image Image Image"
     "Image Image Image"
-    "Artist Artist ."
+    "Artist Artist Artist"
     "Details Details Details";
 `;
 
 const ImageContainer = styled.img`
   width: 100%;
   height: auto;
-  margin: 50px 10% 0px 7%;
+  margin: 50px 20px 0px 20px;
   grid-area: Image;
 `;
 
 const ArtistContainer = styled.p`
   grid-area: Artist;
   padding: 10px 20px 0px 20px;
+  letter-spacing: 0.1em;
 `;
 
 const DetailsContainer = styled.p`

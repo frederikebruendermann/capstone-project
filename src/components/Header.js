@@ -18,6 +18,10 @@ export default function Header({ pageName }) {
 
 const Heading = styled.header`
   position: fixed;
+  left: 0;
+  font-family: Helvetica Neue;
+  font-weight: 200;
+  letter-spacing: 0.2em;
   background: white;
   text-align: center;
   width: 100%;

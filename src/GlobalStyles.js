@@ -10,12 +10,16 @@ body {
   font-family: Helvetica Neue;
   font-size: 112.5%;
   background-color: white;
+  letter-spacing: 0.1em;
 ;
 }
 input,
 button,
-textarea {
+textarea, 
+p {
   font-size: inherit;
+  font-family: Helvetica Neue;
+  font-weight: 200;
 }
 
 h1{
@@ -25,6 +29,7 @@ h1{
   font-size: 20px;
   text-transform: uppercase;
   font-family: Helvetica Neue;
+  letter-spacing: 0.1em;
   font-weight: 200;
 }
 
