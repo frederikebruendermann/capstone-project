@@ -33,8 +33,10 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
               <td>Preis: </td>
               <td>{concert.price}</td>
             </tr>
-            <td>Termin:</td>
-            <td>www.eventim.de </td>
+            <tr>
+              <td>Termin:</td>
+              <td>www.eventim.de </td>
+            </tr>
           </Facts>
         </DetailsContainer>
       </Wrapper>
