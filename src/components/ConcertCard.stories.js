@@ -8,4 +8,8 @@ export default {
 const Template = (args) => <ConcertCard {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  date: "Do., 02.12.2021, 20:00",
+  location: "Pier2",
+  artist: "Madsen",
+};

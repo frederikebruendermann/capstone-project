@@ -3,28 +3,48 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 * {
     box-sizing: border-box;
+    margin:0;
 }
+
+:root{
+  --purple: #A0568D;
+  --light-grey: #A09B9B;
+  --light-purple: #ECCDDF;
+  --white: #FFFFFF;
+  --black: #393636;
+  --text-transform: uppercase;
+}
+
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: Helvetica Neue, sans-serif;
   font-size: 112.5%;
+  font-weight: 200;
   background-color: white;
+  letter-spacing: 0.1em;
 ;
 }
 input,
 button,
-textarea {
+textarea, 
+p {
   font-size: inherit;
+  font-family: Helvetica Neue;
+  font-weight: 200;
 }
 
-:root{
-  --blue: #1C85E8;
-  --peach: #FF896D;
-  --light-peach: #1C85E8;
-  --light-blue: #ACD3F8;
-  --white: #FFFFFF;
-  --black: #212121;
+h1{
+  display: grid;
+  justify-content: center;
+  color: var(--black);
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: Helvetica Neue;
+  letter-spacing: 0.1em;
+  font-weight: 200;
 }
+
+
 
 `;
 

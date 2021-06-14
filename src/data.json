@@ -1,52 +1,10 @@
 [
   {
-    "artistName": "\nHaiyti",
-    "image": "",
-    "concertDate": "\nSa., 12.06.2021, 20:00",
-    "concertLocation": "BREMEN, CLUB100 im Pier 2",
-    "price": "\nab € 22,70\n"
-  },
-  {
-    "artistName": "\nMaybebop - Ziel:Los!",
-    "image": "https://www.eventim.de/obj/mam/germany/73/ce/maybebop---ziel-los--tickets_48665_467053_222x222.jpg",
-    "concertDate": "\nMi., 16.06.2021, 20:00",
-    "concertLocation": "Bremen, Kulturzentrum Schlachthof",
-    "price": "\nab € 34,50\n"
-  },
-  {
-    "artistName": "\nRockabilly Night - Doghouse Daddy & The Boppin’ Blue Hearts",
-    "image": "",
-    "concertDate": "\nSa., 19.06.2021, 20:00",
-    "concertLocation": "BREMEN, Kulturzentrum Schlachthof / Arena",
-    "price": "\nab € 17,20\n"
-  },
-  {
-    "artistName": "\nBoots Night Konzert - Blechreiz – Ska aus Berlin",
-    "image": "",
-    "concertDate": "\nSa., 26.06.2021, 20:00",
-    "concertLocation": "BREMEN, Kulturzentrum Schlachthof / Arena",
-    "price": "\nab € 17,20\n"
-  },
-  {
-    "artistName": "\nElekTrAktions 2021 - ATTO UNICO",
-    "image": "",
-    "concertDate": "\nMi., 30.06.2021, 20:00",
-    "concertLocation": "BREMEN, Kulturzentrum Schlachthof / Arena",
-    "price": "\nab € 13,90\n"
-  },
-  {
     "artistName": "\nElement Of Crime - Seebühne Bremen 2021",
-    "image": "",
+    "image": "https://www.eventim.de/obj/media/DE-eventim/teaser/222x222/2021/element-of-juicy-beats-crime-tickets-2021.jpg",
     "concertDate": "\nFr., 02.07.2021, 20:00",
     "concertLocation": "Bremen, Seebühne Bremen",
     "price": "\nab € 50,55\n"
-  },
-  {
-    "artistName": "\nHOSSA - Aber bitte mit Schlager - Seebühne Bremen 2021",
-    "image": "",
-    "concertDate": "\nMo., 05.07.2021, 20:00",
-    "concertLocation": "Bremen, Seebühne Bremen",
-    "price": "\nab € 29,65\n"
   },
   {
     "artistName": "\nThe Music of John Williams - Live in Concert - Seebühne Bremen 2021",
@@ -98,34 +56,6 @@
     "price": "\nab € 36,25\n"
   },
   {
-    "artistName": "\nTom Gaebel & His Orchestra singt Sinatra - Seebühne Bremen",
-    "image": "",
-    "concertDate": "\nDo., 22.07.2021, 20:00",
-    "concertLocation": "Bremen, Seebühne Bremen",
-    "price": "\nab € 36,25\n"
-  },
-  {
-    "artistName": "\nRummelsnuff & Asbach",
-    "image": "",
-    "concertDate": "\nFr., 10.09.2021, 20:30",
-    "concertLocation": "Bremen, Kulturzentrum Lagerhaus",
-    "price": "\nab € 17,20\n"
-  },
-  {
-    "artistName": "\nMeadows",
-    "image": "",
-    "concertDate": "\nSo., 12.09.2021, 20:00",
-    "concertLocation": "BREMEN, etage 3",
-    "price": "\nab € 17,80\n"
-  },
-  {
-    "artistName": "\nDas Ich",
-    "image": "",
-    "concertDate": "\nSa., 18.09.2021, 20:00",
-    "concertLocation": "Bremen, Lila Eule",
-    "price": "\nab € 28,20\n"
-  },
-  {
     "artistName": "\nSulaiman Masomi: Morgen-Land",
     "image": "https://www.eventim.de/obj/mam/germany/3f/41/sulaiman-masomi---morgen-land-tickets_31962_278150_222x222.jpg",
     "concertDate": "\nSa., 18.09.2021, 20:00",
@@ -140,39 +70,11 @@
     "price": "\nab € 21,10\n"
   },
   {
-    "artistName": "\nLehmanns Brothers",
-    "image": "",
-    "concertDate": "\nSo., 19.09.2021, 20:30",
-    "concertLocation": "Bremen, Kulturzentrum Lagerhaus",
-    "price": "\nab € 17,20\n"
-  },
-  {
     "artistName": "\nDie Prinzen",
     "image": "https://www.eventim.de/obj/mam/germany/15/bf/die-prinzen-tickets_43273_407877_222x222.jpg",
     "concertDate": "\nMo., 20.09.2021, 20:00",
     "concertLocation": "Bremen, Metropol Theater Bremen",
     "price": "\nab € 42,15\n"
-  },
-  {
-    "artistName": "\nVéronique Gayot - Animal Tour 2021",
-    "image": "",
-    "concertDate": "\nMo., 20.09.2021, 20:00",
-    "concertLocation": "Bremen, Meisenfrei",
-    "price": "\nab € 22,70\n"
-  },
-  {
-    "artistName": "\nJoja Wendt - Stars on 88 Part II",
-    "image": "",
-    "concertDate": "\nDi., 21.09.2021, 20:00",
-    "concertLocation": "Bremen, Die Glocke",
-    "price": "\nab € 35,75\n"
-  },
-  {
-    "artistName": "\nThe Screenshots",
-    "image": "",
-    "concertDate": "\nDo., 23.09.2021, 20:30",
-    "concertLocation": "Bremen, Kulturzentrum Lagerhaus",
-    "price": "\nab € 15,00\n"
   },
   {
     "artistName": "\nNaturally 7 - 20 Years Tour",
@@ -187,13 +89,6 @@
     "concertDate": "\nSa., 25.09.2021, 20:00",
     "concertLocation": "Bremen, Kulturzentrum Lagerhaus",
     "price": "\nab € 22,70\n"
-  },
-  {
-    "artistName": "\nDer Wanderer",
-    "image": "",
-    "concertDate": "\nSa., 25.09.2021, 20:00",
-    "concertLocation": "Bremen, Die Glocke",
-    "price": "\nab € 26,00\n"
   },
   {
     "artistName": "\nDöll - Kultour 2021",
@@ -266,13 +161,6 @@
     "price": "\nab € 29,20\n"
   },
   {
-    "artistName": "\nEin Weihnachtstraum - Das Weihnachtskonzert der besonderen Art",
-    "image": "",
-    "concertDate": "\nDo., 02.12.2021, 19:30",
-    "concertLocation": "Bremen, Metropol Theater Bremen",
-    "price": "\nab € 40,65\n"
-  },
-  {
     "artistName": "\nJohn Diva & The Rockets Of Love",
     "image": "https://www.eventim.de/obj/media/DE-eventim/teaser/222x222/2020/john-diva-tickets-2020.jpg",
     "concertDate": "\nDo., 02.12.2021, 20:00",
@@ -329,13 +217,6 @@
     "price": "\nab € 24,90\n"
   },
   {
-    "artistName": "\nMoney Boy & Hustensaft Jüngling",
-    "image": "",
-    "concertDate": "\nSa., 04.12.2021, 19:30",
-    "concertLocation": "Bremen, Modernes",
-    "price": "\nab € 25,00\n"
-  },
-  {
     "artistName": "\nWelle:Erdball - Film, Funk & Fernsehen Tour 2021",
     "image": "https://www.eventim.de/obj/mam/germany/3c/87/welle-erdball-tickets_52790_513986_222x222.jpg",
     "concertDate": "\nSa., 04.12.2021, 20:00",
@@ -376,13 +257,6 @@
     "concertDate": "\nFr., 10.12.2021, 20:00",
     "concertLocation": "Bremen, Kulturzentrum Schlachthof",
     "price": "\nab € 36,60\n"
-  },
-  {
-    "artistName": "\nTamikrest - Tamotait Tour 2020",
-    "image": "",
-    "concertDate": "\nFr., 10.12.2021, 20:00",
-    "concertLocation": "Bremen, Tower Musikclub",
-    "price": "\nab € 22,70\n"
   },
   {
     "artistName": "\nFritz Kalkbrenner - True Colours Tour 2021",
@@ -476,13 +350,6 @@
     "price": "\nab € 31,00\n"
   },
   {
-    "artistName": "\nInsomnium & Omnium Gatherum",
-    "image": "",
-    "concertDate": "\nMo., 20.12.2021, 20:00",
-    "concertLocation": "Bremen, Tivoli",
-    "price": "\nab € 34,45\n"
-  },
-  {
     "artistName": "\nEarly Entry | Mia Julia 2021 - Die Live-Konzerte",
     "image": "https://www.eventim.de/obj/media/DE-eventim/teaser/222x222/2021/mia-julia-tickets-2021.jpg",
     "concertDate": "\nDi., 21.12.2021, 20:00",
@@ -532,13 +399,6 @@
     "price": "\nab € 25,45\n"
   },
   {
-    "artistName": "\nKeimzeit",
-    "image": "",
-    "concertDate": "\nDo., 13.01.2022, 20:00",
-    "concertLocation": "Bremen, KITO Vegesack",
-    "price": "\nab € 27,00\n"
-  },
-  {
     "artistName": "\nBRDIGUNG + Support Grenzen|Los",
     "image": "https://www.eventim.de/obj/media/DE-eventim/teaser/222x222/2019/brdigung-zeig-dich-tickets-2019.jpg",
     "concertDate": "\nFr., 14.01.2022, 20:00",
@@ -565,13 +425,6 @@
     "concertDate": "\nSa., 15.01.2022, 20:00",
     "concertLocation": "Bremen - Hemelingen, Aladin Music Hall",
     "price": "\nab € 37,25\n"
-  },
-  {
-    "artistName": "\nEmpathy Test",
-    "image": "",
-    "concertDate": "\nSa., 15.01.2022, 20:00",
-    "concertLocation": "Bremen, Lila Eule",
-    "price": "\nab € 28,20\n"
   },
   {
     "artistName": "\nDie Nacht der 5 Tenöre",
@@ -644,13 +497,6 @@
     "price": "\nab € 34,25\n"
   },
   {
-    "artistName": "\nPippo Pollina & Palermo Acoustic Quintet",
-    "image": "",
-    "concertDate": "\nFr., 28.01.2022, 20:00",
-    "concertLocation": "Bremen, Kulturzentrum Schlachthof",
-    "price": "\nab € 37,75\n"
-  },
-  {
     "artistName": "\nGoldroger - Diskman Legends-Tour 2022",
     "image": "https://www.eventim.de/obj/media/DE-eventim/teaser/222x222/2021/goldroger-tickets-2021.jpg",
     "concertDate": "\nSa., 29.01.2022, 20:00",
@@ -680,7 +526,7 @@
   },
   {
     "artistName": "\nTurbostaat",
-    "image": "",
+    "image": "https://www.eventim.de/obj/media/DE-eventim/galery/222x222/t/turbostaat-tickets.jpg",
     "concertDate": "\nDo., 03.02.2022, 20:00",
     "concertLocation": "Bremen, Kulturzentrum Schlachthof",
     "price": "\nab € 24,90\n"
@@ -693,25 +539,11 @@
     "price": "\nab € 27,10\n"
   },
   {
-    "artistName": "\nLysistrata",
-    "image": "",
-    "concertDate": "\nDi., 08.02.2022, 20:30",
-    "concertLocation": "Bremen, Kulturzentrum Lagerhaus",
-    "price": "\nab € 13,90\n"
-  },
-  {
     "artistName": "\nKNAPPE - Tour 2022",
     "image": "https://www.eventim.de/obj/media/DE-eventim/teaser/222x222/2021/alexander-knappe-tickets-2021.jpg",
     "concertDate": "\nMi., 09.02.2022, 20:00",
     "concertLocation": "Bremen, Kulturzentrum Schlachthof",
     "price": "\nab € 38,25\n"
-  },
-  {
-    "artistName": "\nKafvka",
-    "image": "",
-    "concertDate": "\nDo., 10.02.2022, 20:00",
-    "concertLocation": "Bremen, Tower Musikclub",
-    "price": "\nab € 17,20\n"
   },
   {
     "artistName": "\nMIA.",
@@ -740,13 +572,6 @@
     "concertDate": "\nSa., 12.02.2022, 20:30",
     "concertLocation": "BREMEN, Gastfeld",
     "price": "\nab € 14,61\n"
-  },
-  {
-    "artistName": "\nUnterwegs nach Umbidu",
-    "image": "",
-    "concertDate": "\nSo., 13.02.2022, 15:00",
-    "concertLocation": "Bremen, Die Glocke",
-    "price": "\nab € 13,00\n"
   },
   {
     "artistName": "\nMaeckes & Die Katastrophen - Pool Tour",
@@ -838,27 +663,6 @@
     "concertDate": "\nDo., 03.03.2022, 20:00",
     "concertLocation": "Bremen, Messe Bremen",
     "price": "\nab € 39,90\n"
-  },
-  {
-    "artistName": "\nErdling - Helheim Tour 2022",
-    "image": "",
-    "concertDate": "\nSo., 06.03.2022, 20:00",
-    "concertLocation": "Bremen, Tower Musikclub",
-    "price": "\nab € 24,90\n"
-  },
-  {
-    "artistName": "\nMaxim",
-    "image": "",
-    "concertDate": "\nDo., 10.03.2022, 20:00",
-    "concertLocation": "Bremen, Kulturzentrum Schlachthof",
-    "price": "\nab € 31,70\n"
-  },
-  {
-    "artistName": "\nProcol Harum - Live 2022",
-    "image": "",
-    "concertDate": "\nFr., 11.03.2022, 20:00",
-    "concertLocation": "Bremen, Metropol Theater Bremen",
-    "price": "\nab € 37,45\n"
   },
   {
     "artistName": "\nDer Herr der Ringe & Der Hobbit - Das Konzert",
