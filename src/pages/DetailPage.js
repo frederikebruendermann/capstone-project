@@ -45,12 +45,12 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
 }
 
 const Wrapper = styled.div`
-  display: grid;
+  display: inline;
   margin: 0;
   font-family: Helvetica Neue;
   font-weight: 200;
   grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 15% 15% 15% 15%;
+  grid-template-rows: 10% 10% 35% 35%;
   grid-template-areas:
     "Image Image Image"
     "Image Image Image"
@@ -61,8 +61,10 @@ const Wrapper = styled.div`
 const Image = styled.img`
   width: 100%;
   height: auto;
-  margin: 50px 20px 0px 20px;
+  margin: 60px 0px 0px 0px;
   grid-area: Image;
+  display: grid;
+  justify-items: center;
 `;
 
 const ArtistContainer = styled.p`
