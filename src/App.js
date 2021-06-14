@@ -13,7 +13,7 @@ export default function App() {
     <>
       {activePage === "suche" && (
         <SearchPage
-          pageName={"Suche"}
+          pageName="Suche"
           concerts={concerts}
           onNavigate={handleClickDetails}
         />
@@ -21,7 +21,7 @@ export default function App() {
 
       {activePage === "details" && (
         <DetailPage
-          pageName={"Details"}
+          pageName="Details"
           concert={concertDetails}
           onNavigate={handleClickBack}
         />

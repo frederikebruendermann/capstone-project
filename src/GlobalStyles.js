@@ -5,6 +5,16 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin:0;
 }
+
+:root{
+  --purple: #A0568D;
+  --light-grey: #A09B9B;
+  --light-purple: #ECCDDF;
+  --white: #FFFFFF;
+  --black: #393636;
+  --text-transform: uppercase;
+}
+
 body {
   margin: 0;
   font-family: Helvetica Neue;
@@ -33,17 +43,7 @@ h1{
   font-weight: 200;
 }
 
-:root{
-  --purple: #A0568D;
-  --light-grey: #A09B9B;
-  --light-purple: #ECCDDF;
-  --white: #FFFFFF;
-  --black: #393636;
-  --font-family: Helvetica Neue;
-  --text-transform: uppercase;
 
-
-}
 
 `;
 

@@ -54,7 +54,6 @@ const Wrapper = styled(Button)`
   display: grid;
   grid-template-columns: 75% 25%;
   grid-template-rows: 10%;
-  gap: 0px 0px;
   grid-template-areas: "Text Image";
   box-shadow: 0 0.2px 2px 0 #dbd7d7, 0 1px 1px 0 #dbd7d7;
 `;
