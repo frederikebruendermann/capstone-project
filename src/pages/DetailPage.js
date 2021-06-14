@@ -68,7 +68,7 @@ const ArtistContainer = styled.p`
   margin-bottom: 20px; ;
 `;
 
-const DetailsContainer = styled.p`
+const DetailsContainer = styled.table`
         padding: 0px 20px 0px 20px;
         display: grid;
         grid-area: Details;
@@ -76,8 +76,8 @@ const DetailsContainer = styled.p`
         grid-template-columns: 1fr 2fr;
         grid-template-areas: "Facts FactsData;
       `;
-const Facts = styled.span``;
+const Facts = styled.td``;
 
-const FactsData = styled.span`
+const FactsData = styled.td`
   text-align: right;
 `;

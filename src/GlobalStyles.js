@@ -19,6 +19,7 @@ body {
   margin: 0;
   font-family: Helvetica Neue;
   font-size: 112.5%;
+  font-weight: 200;
   background-color: white;
   letter-spacing: 0.1em;
 ;

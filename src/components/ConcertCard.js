@@ -2,7 +2,6 @@ import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 import "../GlobalStyles";
 import "../data.json";
-import Button from "./Button";
 
 ConcertCard.propTypes = {
   concerts: PropTypes.arrayOf(
@@ -43,11 +42,14 @@ export default function ConcertCard({
   );
 }
 
-const Wrapper = styled(Button)`
+const Wrapper = styled.section`
   margin: 3px;
   border: 1px solid white;
   width: 50vh;
   border-radius: 10px;
+  font-family: Helvetica Neue;
+  font-weight: 200;
+  letter-spacing: 0.1em;
   padding: 10px;
   background: var(--white);
   list-style: none;
