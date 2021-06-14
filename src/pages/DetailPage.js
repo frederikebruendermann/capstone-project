@@ -43,7 +43,7 @@ const Wrapper = styled.div`
   display: grid;
   margin: 0;
   grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 15% 15% 15% 15%;
+  /* grid-template-rows: 15% 15% 15% 15%; */
   font-family: Helvetica Neue;
   font-weight: 200;
   gap: 0px 0px;
