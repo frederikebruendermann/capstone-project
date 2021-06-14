@@ -30,7 +30,7 @@ export default function SearchPage({ pageName, onNavigate, concerts }) {
   );
 }
 
-const ConcertList = styled.ul`
+const ConcertList = styled.li`
   display: grid;
   margin-top: 50px;
   justify-content: center;

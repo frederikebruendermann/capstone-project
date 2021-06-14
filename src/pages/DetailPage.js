@@ -74,7 +74,7 @@ const ArtistContainer = styled.p`
   margin-bottom: 20px; ;
 `;
 
-const DetailsContainer = styled.section`
+const DetailsContainer = styled.table`
         padding: 0px 20px 0px 20px;
         display: grid;
         grid-area: Details;
@@ -82,4 +82,4 @@ const DetailsContainer = styled.section`
         grid-template-columns: 1fr fr;
         grid-template-areas: "Facts FactsData;
       `;
-const Facts = styled.table``;
+const Facts = styled.tbody``;
