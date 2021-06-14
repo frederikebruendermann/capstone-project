@@ -21,17 +21,21 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
         </ArtistContainer>
         <DetailsContainer>
           <Facts>
-            Location:
-            <br /> Termin:
-            <br /> Tickets:
-            <br /> Preis:
+            <tr>
+              <td>Location: </td>
+              <td>{concert.location}</td>
+            </tr>
+            <tr>
+              <td>Termin: </td>
+              <td>{concert.date}</td>
+            </tr>
+            <tr>
+              <td>Preis: </td>
+              <td>{concert.price}</td>
+            </tr>
+            <td>Termin:</td>
+            <td>www.eventim.de </td>
           </Facts>
-          <FactsData>
-            {concert.location}
-            <br /> {concert.date}
-            <br /> www.eventim.de
-            <br /> {concert.price}
-          </FactsData>
         </DetailsContainer>
       </Wrapper>
       <Button onClick={onNavigate}>&lt;-- back </Button>
@@ -68,16 +72,12 @@ const ArtistContainer = styled.p`
   margin-bottom: 20px; ;
 `;
 
-const DetailsContainer = styled.table`
+const DetailsContainer = styled.section`
         padding: 0px 20px 0px 20px;
         display: grid;
         grid-area: Details;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr fr;
         grid-template-areas: "Facts FactsData;
       `;
-const Facts = styled.td``;
-
-const FactsData = styled.td`
-  text-align: right;
-`;
+const Facts = styled.table``;
