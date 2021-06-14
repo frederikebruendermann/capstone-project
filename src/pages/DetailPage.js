@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components/macro";
 import Heading from "../components/Header";
 import Button from "../components/Button";
-// import DividingLine from "../components/DividingLine";
 
 DetailPage.propTypes = {
   concert: PropTypes.object,
@@ -48,11 +47,10 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
 const Wrapper = styled.div`
   display: grid;
   margin: 0;
-  grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 15% 15% 15% 15%;
   font-family: Helvetica Neue;
   font-weight: 200;
-  gap: 0px 0px;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 15% 15% 15% 15%;
   grid-template-areas:
     "Image Image Image"
     "Image Image Image"
@@ -70,12 +68,12 @@ const Image = styled.img`
 const ArtistContainer = styled.p`
   grid-area: Artist;
   padding: 10px 20px 0px 20px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.1rem;
   margin-bottom: 20px; ;
 `;
 
 const DetailsContainer = styled.table`
-        padding: 0px 20px 0px 20px;
+        padding: 0px 20px;
         display: grid;
         grid-area: Details;
         grid-template-rows: 1fr;

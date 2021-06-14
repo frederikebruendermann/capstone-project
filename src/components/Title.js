@@ -12,7 +12,7 @@ export default function Title({ pageName }) {
 
 const PageName = styled.h1`
   display: grid;
-  justify-content: center;
+  justify-items: center;
   color: var(--black);
   font-size: 20px;
   text-transform: uppercase;

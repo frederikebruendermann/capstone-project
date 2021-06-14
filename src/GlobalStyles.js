@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
 body {
   margin: 0;
-  font-family: Helvetica Neue;
+  font-family: Helvetica Neue, sans-serif;
   font-size: 112.5%;
   font-weight: 200;
   background-color: white;

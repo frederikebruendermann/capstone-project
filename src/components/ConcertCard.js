@@ -25,17 +25,17 @@ export default function ConcertCard({
   onClick,
 }) {
   const createDate = date.split(", ");
-  const Date = [createDate[1].replace(",", " ")];
+  const shortDate = [createDate[1].replace(",", " ")];
 
   const createLocation = location.split(",");
-  const Location = [createLocation[1].replace(",", " ")];
+  const shortLocation = [createLocation[1].replace(",", " ")];
 
   return (
     <Wrapper onClick={onClick}>
       <TextStyle>
-        <DateStyle>{Date}</DateStyle>
+        <DateStyle>{shortDate}</DateStyle>
         <ArtistStyle>{artist}</ArtistStyle>
-        <LocationStyle>{Location}</LocationStyle>
+        <LocationStyle>{shortLocation}</LocationStyle>
       </TextStyle>
       <Image src={image} alt="" />
     </Wrapper>
@@ -44,25 +44,25 @@ export default function ConcertCard({
 
 const Wrapper = styled.section`
   margin: 3px;
+  padding: 10px;
   border: 1px solid white;
   width: 50vh;
   border-radius: 10px;
+  background: var(--white);
+  box-shadow: 0 0.2px 2px 0 #dbd7d7, 0 1px 1px 0 #dbd7d7;
   font-family: Helvetica Neue;
   font-weight: 200;
   letter-spacing: 0.1em;
-  padding: 10px;
-  background: var(--white);
   list-style: none;
   display: grid;
   grid-template-columns: 75% 25%;
-  grid-template-rows: 10%;
+  grid-template-rows: 7ch;
   grid-template-areas: "Text Image";
-  box-shadow: 0 0.2px 2px 0 #dbd7d7, 0 1px 1px 0 #dbd7d7;
 `;
 
 const TextStyle = styled.section`
-  grid-area: Text;
   text-align: left;
+  grid-area: Text;
   display: grid;
   justify-self: start;
   grid-template-rows: 10px 30px 10px;
@@ -80,12 +80,12 @@ const DateStyle = styled.span`
 
 const ArtistStyle = styled.div`
   font-size: 15px;
+  text-overflow: ellipsis;
   grid-area: Artist;
   justify-self: start;
   white-space: nowrap;
   overflow: hidden;
   max-width: 24ch;
-  text-overflow: ellipsis;
 `;
 
 const LocationStyle = styled.span`

@@ -7,6 +7,7 @@ SearchPage.propTypes = {
   pageName: PropTypes.string,
   concerts: PropTypes.array,
   onClick: PropTypes.func,
+  onNavigate: PropTypes.func,
 };
 
 export default function SearchPage({ pageName, onNavigate, concerts }) {
@@ -31,11 +32,9 @@ export default function SearchPage({ pageName, onNavigate, concerts }) {
 }
 
 const ConcertList = styled.li`
-  display: grid;
-  margin-top: 50px;
-  justify-content: center;
   padding: 5px;
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
+  margin-top: 50px;
+  display: grid;
+  justify-content: center;
+  overflow-y: auto;
 `;
