@@ -1,12 +1,10 @@
-import { v4 as uuidv4 } from "uuid";
-
 export default function getConcertDetails(concert) {
   return {
-    artist: concert.artistName,
-    location: concert.concertLocation,
-    date: concert.concertDate,
-    image: concert.image,
-    price: concert.price,
-    id: uuidv4(),
+    artist: data._embedded.events.name,
+    location: data._embedded.events.name,
+    date: data._embedded.events.dates.start.localDate,
+    image: data._embedded.events.images.url,
+    price: data._embedded.events.name,
+    id: data._embedded.events.id,
   };
 }

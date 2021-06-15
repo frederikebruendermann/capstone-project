@@ -2,6 +2,7 @@ import styled from "styled-components/macro";
 import PropTypes from "prop-types";
 import ConcertCard from "../components/ConcertCard";
 import Heading from "../components/Header";
+import React from "react";
 
 SearchPage.propTypes = {
   pageName: PropTypes.string,
