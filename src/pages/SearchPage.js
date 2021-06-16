@@ -22,7 +22,7 @@ export default function SearchPage({ pageName, onNavigate, concerts }) {
             date={concert.date}
             artist={concert.artist}
             location={concert.location}
-            image={concert.image}
+            image3_2={concert.image3_2}
             price={concert.price}
             onClick={() => onNavigate(concert.id)}
           />

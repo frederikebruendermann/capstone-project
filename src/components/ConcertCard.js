@@ -9,8 +9,8 @@ ConcertCard.propTypes = {
       artist: PropTypes.string,
       location: PropTypes.string,
       id: PropTypes.string,
-      image: PropTypes.node,
-      price: PropTypes.string,
+      image3_2: PropTypes.node,
+      price: PropTypes.number,
     })
   ),
   onClick: PropTypes.func,
@@ -20,23 +20,23 @@ export default function ConcertCard({
   date,
   artist,
   location,
-  image,
+  image3_2,
   onClick,
 }) {
-  const createDate = date.split(", ");
-  const shortDate = [createDate[1].replace(",", " ")];
+  // const createDate = date.split(", ");
+  // const shortDate = [createDate[1].replace(",", " ")];
 
-  const createLocation = location.split(",");
-  const shortLocation = [createLocation[1].replace(",", " ")];
+  // const createLocation = location.split(",");
+  // const shortLocation = [createLocation[1].replace(",", " ")];
 
   return (
     <Wrapper onClick={onClick}>
       <TextStyle>
-        <DateStyle>{shortDate}</DateStyle>
+        <DateStyle>{date}</DateStyle>
         <ArtistStyle>{artist}</ArtistStyle>
-        <LocationStyle>{shortLocation}</LocationStyle>
+        <LocationStyle>{location}</LocationStyle>
       </TextStyle>
-      <Image src={image} alt="" />
+      <Image src={image3_2} alt="" />
     </Wrapper>
   );
 }

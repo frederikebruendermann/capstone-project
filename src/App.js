@@ -1,7 +1,6 @@
 import SearchPage from "../src/pages/SearchPage";
 import { useState } from "react";
 import DetailPage from "./pages/DetailPage";
-// import data from "../src/test.json";
 import getConcertDetails from "./services/getConcertDetails";
 import React from "react";
 
@@ -15,7 +14,7 @@ export default function App() {
     fetch(url)
       .then((res) => res.json())
       .then((res) => {
-        setData(res.results);
+        setData(res._embedded.events);
       })
       .catch((error) => console.error(error));
   }, [url]);

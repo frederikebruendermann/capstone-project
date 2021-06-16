@@ -14,7 +14,7 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
     <div>
       <Heading pageName={pageName} />
       <Wrapper>
-        <Image src={concert.image} alt="" />
+        <Image src={concert.image16_9} alt="" />
         <ArtistContainer>
           <span>{concert.artist}</span>
         </ArtistContainer>
@@ -29,12 +29,12 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
               <td>{concert.date}</td>
             </tr>
             <tr>
-              <td>Preis: </td>
-              <td>{concert.price}</td>
+              <td>Link: </td>
+              <td>{concert.link}</td>
             </tr>
             <tr>
-              <td>Termin:</td>
-              <td>www.eventim.de </td>
+              <td>Preis:</td>
+              <td>ab {concert.price} €</td>
             </tr>
           </Facts>
         </DetailsContainer>
