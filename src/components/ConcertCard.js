@@ -48,8 +48,8 @@ const Wrapper = styled.section`
   letter-spacing: 0.1em;
   list-style: none;
   display: grid;
-  grid-template-columns: 75% 25%;
-  grid-template-rows: 7ch;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 8ch;
   grid-template-areas: "Text Image";
 `;
 
@@ -90,9 +90,8 @@ const LocationStyle = styled.span`
 const Image = styled.img`
   height: 10vh;
   border-radius: 11%;
-  margin: 0em 0em 0em 0.5em;
-  padding: 0px;
+  /* margin: 0em 0em 0em 0.5em; */
   display: grid;
   grid-area: Image;
-  place-items: right;
+  place-items: center;
 `;

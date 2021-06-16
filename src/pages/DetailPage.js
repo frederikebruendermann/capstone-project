@@ -22,7 +22,9 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
           <Facts>
             <tr>
               <td>Location: </td>
-              <td>{concert.location}</td>
+              <td>
+                {concert.location}, {concert.locationCity}
+              </td>
             </tr>
             <tr>
               <td>Termin: </td>
@@ -30,11 +32,13 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
             </tr>
             <tr>
               <td>Link: </td>
-              <td>{concert.link}</td>
+              <td>
+                <a href={concert.link}>www.ticketmaster.de</a>
+              </td>
             </tr>
             <tr>
               <td>Preis:</td>
-              <td>ab {concert.price} €</td>
+              <td>{concert.price}</td>
             </tr>
           </Facts>
         </DetailsContainer>

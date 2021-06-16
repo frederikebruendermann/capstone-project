@@ -1,5 +1,6 @@
 export default function getConcertDetails(concert) {
-  const price = concert.priceRanges ? concert.priceRanges[0].min : "TBA";
+  const getPrice = concert.priceRanges ? concert.priceRanges[0].min : "TBA";
+  const price = getPrice === "TBA" ? "TBA" : "ab " + getPrice + " €";
 
   const index3_2 = concert.images.findIndex((image) => image.ratio === "3_2");
   const index16_9 = concert.images.findIndex((image) => image.ratio === "16_9");
@@ -10,11 +11,13 @@ export default function getConcertDetails(concert) {
   const createDate = longDate.split(" ");
   const createDateArray = [createDate[2], createDate[1], createDate[3]];
   const shortDate = createDateArray.join(" ");
-  console.log(shortDate);
+
+  console.log(concert._embedded.venues[0].city.name);
 
   return {
-    artist: concert.name,
+    artist: concert._embedded.attractions[0].name,
     location: concert._embedded.venues[0].name,
+    city: concert._embedded.venues[0].city.name,
     date: concert.dates.start.localDate,
     shortDate,
     time: concert.dates.start.localTime,

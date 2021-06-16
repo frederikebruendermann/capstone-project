@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import ConcertCard from "../components/ConcertCard";
 import Heading from "../components/Header";
 import React from "react";
+import SearchInput from "../components/SearchInput";
 
 SearchPage.propTypes = {
   pageName: PropTypes.string,
@@ -15,6 +16,7 @@ export default function SearchPage({ pageName, onNavigate, concerts }) {
   return (
     <>
       <Heading pageName={pageName} />
+      <SearchInput />
       <ConcertList>
         {concerts.map((concert) => (
           <ConcertCard
@@ -34,7 +36,6 @@ export default function SearchPage({ pageName, onNavigate, concerts }) {
 
 const ConcertList = styled.li`
   padding: 5px;
-  margin-top: 50px;
   display: grid;
   justify-content: center;
   overflow-y: auto;
