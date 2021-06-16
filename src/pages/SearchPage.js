@@ -19,7 +19,7 @@ export default function SearchPage({ pageName, onNavigate, concerts }) {
         {concerts.map((concert) => (
           <ConcertCard
             key={concert.id}
-            date={concert.date}
+            date={concert.shortDate}
             artist={concert.artist}
             location={concert.location}
             image3_2={concert.image3_2}

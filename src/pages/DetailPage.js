@@ -26,7 +26,7 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
             </tr>
             <tr>
               <td>Termin: </td>
-              <td>{concert.date}</td>
+              <td>{concert.shortDate}</td>
             </tr>
             <tr>
               <td>Link: </td>

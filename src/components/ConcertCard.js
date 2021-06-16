@@ -23,12 +23,6 @@ export default function ConcertCard({
   image3_2,
   onClick,
 }) {
-  // const createDate = date.split(", ");
-  // const shortDate = [createDate[1].replace(",", " ")];
-
-  // const createLocation = location.split(",");
-  // const shortLocation = [createLocation[1].replace(",", " ")];
-
   return (
     <Wrapper onClick={onClick}>
       <TextStyle>
