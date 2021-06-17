@@ -12,7 +12,7 @@ export default function SearchInput({ setCity }) {
   return (
     <SearchForm onSubmit={handleSubmit}>
       <SearchInputField
-        type="search"
+        type="text"
         name="searchCity"
         placeholder="Berlin, Hamburg oder Bremen"
       />

@@ -1,11 +1,9 @@
+import { render, screen } from "@testing-library/react";
+import SearchInput from "./SearchInput";
 
-    import {render, screen} from '@testing-library/react'
-    import SearchInput from './SearchInput'
-      
-    describe('SearchInput', () => {
-        it('renders', () => {
-            render(<SearchInput />)
-            expect(screen.getByText('SearchInput')).toBeInTheDocument()
-        })
-    })
-          
+describe("SearchInput", () => {
+  it("should get a city through a textbox", () => {
+    render(<SearchInput />);
+    expect(screen.getByRole("textbox")).toBeInTheDocument();
+  });
+});
