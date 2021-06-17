@@ -1,24 +1,30 @@
+//@ts-check
+
+import PropType from "prop-types";
 import styled from "styled-components/macro";
 import Button from "../components/Button";
 
-export default function SearchInput() {
+SearchInput.propTypes = {
+  setCity: PropType.func,
+};
+
+export default function SearchInput({ setCity }) {
   return (
-    <SearchForm>
+    <SearchForm onSubmit={handleSubmit}>
       <SearchInputField
         type="search"
-        list="Cities"
+        name="searchCity"
         placeholder="Berlin, Hamburg oder Bremen"
       />
-      <datalist id="Cities">
-        <option value="Bremen" />
-        <option value="Hamburg" />
-        <option value="Berlin" />
-      </datalist>
-      <SearchButton type="submit" value="Submit">
-        🔍
-      </SearchButton>
+      <SearchButton>🔍</SearchButton>
     </SearchForm>
   );
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const city = event.target.elements.searchCity.value;
+    setCity(city);
+  }
 }
 
 const SearchForm = styled.form`

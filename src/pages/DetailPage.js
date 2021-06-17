@@ -23,7 +23,7 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
             <tr>
               <td>Location: </td>
               <td>
-                {concert.location}, {concert.locationCity}
+                {concert.location}, {concert.city}
               </td>
             </tr>
             <tr>

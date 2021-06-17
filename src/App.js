@@ -1,3 +1,5 @@
+//@ts-check
+
 import SearchPage from "../src/pages/SearchPage";
 import { useState, useEffect } from "react";
 import DetailPage from "./pages/DetailPage";
@@ -8,15 +10,17 @@ export default function App() {
   const url =
     "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&sort=date,asc&countryCode=DE&classificationName=music";
   const [data, setData] = useState([]);
+  const [currentCity, setCurrentCity] = useState("Bremen");
 
   useEffect(() => {
-    fetch(url)
+    const cityQuery = `&city=${currentCity}`;
+    fetch(url + cityQuery)
       .then((res) => res.json())
       .then((res) => {
         setData(res._embedded.events);
       })
       .catch((error) => console.error(error));
-  }, [url]);
+  }, [url, currentCity]);
 
   const [concertDetails, setConcertDetails] = useState({});
   const concerts = data.map((item) => getConcertDetails(item));
@@ -28,6 +32,7 @@ export default function App() {
           pageName="Suche"
           concerts={concerts}
           onNavigate={handleClickDetails}
+          setCity={newCity}
         />
       )}
 
@@ -40,6 +45,10 @@ export default function App() {
       )}
     </>
   );
+
+  function newCity(city) {
+    setCurrentCity(city);
+  }
 
   function handleClickDetails(id) {
     const index = concerts.findIndex((concert) => concert.id === id);
