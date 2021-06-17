@@ -14,7 +14,9 @@ export default function SearchInput() {
         <option value="Hamburg" />
         <option value="Berlin" />
       </datalist>
-      <SearchButton type="submit">🔍</SearchButton>
+      <SearchButton type="submit" value="Submit">
+        🔍
+      </SearchButton>
     </SearchForm>
   );
 }

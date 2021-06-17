@@ -4,15 +4,11 @@ export default function getConcertDetails(concert) {
 
   const index3_2 = concert.images.findIndex((image) => image.ratio === "3_2");
   const index16_9 = concert.images.findIndex((image) => image.ratio === "16_9");
-  // const createLocation = location.split(",");
-  // const shortLocation = [createLocation[1].replace(",", " ")];
 
   const longDate = new Date(concert.dates.start.localDate) + "";
   const createDate = longDate.split(" ");
   const createDateArray = [createDate[2], createDate[1], createDate[3]];
   const shortDate = createDateArray.join(" ");
-
-  console.log(concert._embedded.venues[0].city.name);
 
   return {
     artist: concert._embedded.attractions[0].name,

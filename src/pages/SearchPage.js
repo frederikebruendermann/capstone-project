@@ -4,6 +4,7 @@ import ConcertCard from "../components/ConcertCard";
 import Heading from "../components/Header";
 import React from "react";
 import SearchInput from "../components/SearchInput";
+// import { useState } from "react";
 
 SearchPage.propTypes = {
   pageName: PropTypes.string,
@@ -16,7 +17,7 @@ export default function SearchPage({ pageName, onNavigate, concerts }) {
   return (
     <>
       <Heading pageName={pageName} />
-      <SearchInput />
+      <SearchInput city={city} onSubmit={handleCitySubmit} />
       <ConcertList>
         {concerts.map((concert) => (
           <ConcertCard
@@ -33,6 +34,11 @@ export default function SearchPage({ pageName, onNavigate, concerts }) {
     </>
   );
 }
+
+// function handleCitySubmit(event) {
+//   const input = event.target;
+//   setCurrentCity(input.value);
+// }
 
 const ConcertList = styled.li`
   padding: 5px;
