@@ -1,8 +1,7 @@
 import SearchPage from "../src/pages/SearchPage";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DetailPage from "./pages/DetailPage";
 import getConcertDetails from "./services/getConcertDetails";
-import React from "react";
 
 export default function App() {
   const [activePage, setActivePage] = useState("suche");
@@ -10,7 +9,7 @@ export default function App() {
     "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&sort=date,asc&countryCode=DE&classificationName=music";
   const [data, setData] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((res) => {
