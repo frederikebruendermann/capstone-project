@@ -1,6 +1,6 @@
-import styled from "styled-components/macro";
-import PropTypes from "prop-types";
-import "../GlobalStyles";
+import PropTypes from 'prop-types'
+import styled from 'styled-components/macro'
+import '../GlobalStyles'
 
 ConcertCard.propTypes = {
   concerts: PropTypes.arrayOf(
@@ -14,7 +14,7 @@ ConcertCard.propTypes = {
     })
   ),
   onClick: PropTypes.func,
-};
+}
 
 export default function ConcertCard({
   date,
@@ -32,7 +32,7 @@ export default function ConcertCard({
       </TextStyle>
       <Image src={image3_2} alt="" />
     </Wrapper>
-  );
+  )
 }
 
 const Wrapper = styled.section`
@@ -50,8 +50,8 @@ const Wrapper = styled.section`
   display: grid;
   grid-template-columns: 70% 30%;
   grid-template-rows: 8ch;
-  grid-template-areas: "Text Image";
-`;
+  grid-template-areas: 'Text Image';
+`
 
 const TextStyle = styled.section`
   text-align: left;
@@ -61,15 +61,15 @@ const TextStyle = styled.section`
   grid-template-rows: 10px 30px 10px;
   gap: 5px 5px;
   grid-template-areas:
-    "Date"
-    "Artist"
-    "Location";
-`;
+    'Date'
+    'Artist'
+    'Location';
+`
 
 const DateStyle = styled.span`
   font-size: 13px;
   grid-area: Date;
-`;
+`
 
 const ArtistStyle = styled.div`
   font-size: 15px;
@@ -79,13 +79,13 @@ const ArtistStyle = styled.div`
   white-space: nowrap;
   overflow: hidden;
   max-width: 24ch;
-`;
+`
 
 const LocationStyle = styled.span`
   font-size: 13px;
   grid-area: Location;
   color: var(--light-grey);
-`;
+`
 
 const Image = styled.img`
   height: 10vh;
@@ -94,4 +94,4 @@ const Image = styled.img`
   display: grid;
   grid-area: Image;
   place-items: center;
-`;
+`

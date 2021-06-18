@@ -1,9 +1,9 @@
-import styled from "styled-components/macro";
-import PropTypes from "prop-types";
-import ConcertCard from "../components/ConcertCard";
-import Heading from "../components/Header";
-import React from "react";
-import SearchInput from "../components/SearchInput";
+import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components/macro'
+import ConcertCard from '../components/ConcertCard'
+import Heading from '../components/Header'
+import SearchInput from '../components/SearchInput'
 
 SearchPage.propTypes = {
   pageName: PropTypes.string,
@@ -11,7 +11,7 @@ SearchPage.propTypes = {
   onClick: PropTypes.func,
   onNavigate: PropTypes.func,
   setCity: PropTypes.func,
-};
+}
 
 export default function SearchPage({
   pageName,
@@ -24,7 +24,7 @@ export default function SearchPage({
       <Heading pageName={pageName} />
       <SearchInput setCity={setCity} />
       <ConcertList>
-        {concerts.map((concert) => (
+        {concerts.map(concert => (
           <ConcertCard
             key={concert.id}
             date={concert.shortDate}
@@ -37,7 +37,7 @@ export default function SearchPage({
         ))}
       </ConcertList>
     </>
-  );
+  )
 }
 
 const ConcertList = styled.li`
@@ -45,4 +45,4 @@ const ConcertList = styled.li`
   display: grid;
   justify-content: center;
   overflow-y: auto;
-`;
+`

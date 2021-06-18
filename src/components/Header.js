@@ -1,11 +1,11 @@
-import styled from "styled-components/macro";
-import PropTypes from "prop-types";
-import DividingLine from "./DividingLine";
-import Title from "../components/Title";
+import PropTypes from 'prop-types'
+import styled from 'styled-components/macro'
+import Title from '../components/Title'
+import DividingLine from './DividingLine'
 
 Header.propTypes = {
   pageName: PropTypes.node,
-};
+}
 
 export default function Header({ pageName }) {
   return (
@@ -13,7 +13,7 @@ export default function Header({ pageName }) {
       <Title pageName={pageName} />
       <DividingLine />
     </Heading>
-  );
+  )
 }
 
 const Heading = styled.header`
@@ -27,4 +27,4 @@ const Heading = styled.header`
   width: 100%;
   margin: 0;
   top: 0;
-`;
+`
