@@ -4,6 +4,7 @@ import SearchPage from '../src/pages/SearchPage'
 import { useState, useEffect } from 'react'
 import DetailPage from './pages/DetailPage'
 import getConcertDetails from './services/getConcertDetails'
+import styled from 'styled-components/macro'
 
 export default function App() {
   const [activePage, setActivePage] = useState('suche')
@@ -27,22 +28,24 @@ export default function App() {
 
   return (
     <>
-      {activePage === 'suche' && (
-        <SearchPage
-          pageName="Suche"
-          concerts={concerts}
-          onNavigate={handleClickDetails}
-          onSubmit={chosenCity}
-        />
-      )}
+      <AppContainer>
+        {activePage === 'suche' && (
+          <SearchPage
+            pageName="Suche"
+            concerts={concerts}
+            onNavigate={handleClickDetails}
+            onSubmit={chosenCity}
+          />
+        )}
 
-      {activePage === 'details' && (
-        <DetailPage
-          pageName="Details"
-          concert={concertDetails}
-          onNavigate={handleClickBack}
-        />
-      )}
+        {activePage === 'details' && (
+          <DetailPage
+            pageName="Details"
+            concert={concertDetails}
+            onNavigate={handleClickBack}
+          />
+        )}
+      </AppContainer>
     </>
   )
 
@@ -60,3 +63,7 @@ export default function App() {
     setActivePage('suche')
   }
 }
+
+const AppContainer = styled.main`
+  max-width: 375px;
+`
