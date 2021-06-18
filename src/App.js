@@ -28,24 +28,22 @@ export default function App() {
 
   return (
     <>
-      <AppContainer>
-        {activePage === 'suche' && (
-          <SearchPage
-            pageName="Suche"
-            concerts={concerts}
-            onNavigate={handleClickDetails}
-            onSubmit={chosenCity}
-          />
-        )}
+      {activePage === 'suche' && (
+        <SearchPage
+          pageName="Suche"
+          concerts={concerts}
+          onNavigate={handleClickDetails}
+          onSubmit={chosenCity}
+        />
+      )}
 
-        {activePage === 'details' && (
-          <DetailPage
-            pageName="Details"
-            concert={concertDetails}
-            onNavigate={handleClickBack}
-          />
-        )}
-      </AppContainer>
+      {activePage === 'details' && (
+        <DetailPage
+          pageName="Details"
+          concert={concertDetails}
+          onNavigate={handleClickBack}
+        />
+      )}
     </>
   )
 
@@ -63,7 +61,3 @@ export default function App() {
     setActivePage('suche')
   }
 }
-
-const AppContainer = styled.main`
-  max-width: 350px;
-`
