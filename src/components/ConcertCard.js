@@ -9,7 +9,7 @@ ConcertCard.propTypes = {
       artist: PropTypes.string,
       location: PropTypes.string,
       id: PropTypes.string,
-      image3_2: PropTypes.node,
+      image3x2: PropTypes.string,
       price: PropTypes.number,
     })
   ),
@@ -30,7 +30,7 @@ export default function ConcertCard({
         <ArtistStyle>{artist}</ArtistStyle>
         <LocationStyle>{location}</LocationStyle>
       </TextStyle>
-      <Image src={image3_2} alt="" />
+      <Image src={image3_2} alt="" height="80px" width="auto" />
     </Wrapper>
   )
 }
@@ -42,14 +42,14 @@ const Wrapper = styled.section`
   width: 50vh;
   border-radius: 10px;
   background: var(--white);
-  box-shadow: 0 0.2px 2px 0 #dbd7d7, 0 1px 1px 0 #dbd7d7;
+  box-shadow: 0 0.5px 1px 0 var(--light-grey), 0 2px 1px 0 var(--light-grey);
   font-family: Helvetica Neue;
   font-weight: 200;
   letter-spacing: 0.1em;
   list-style: none;
   display: grid;
-  grid-template-columns: 70% 30%;
-  grid-template-rows: 8ch;
+  grid-template-columns: 7fr 3fr;
+  grid-template-rows: 1fr;
   grid-template-areas: 'Text Image';
 `
 
@@ -88,9 +88,7 @@ const LocationStyle = styled.span`
 `
 
 const Image = styled.img`
-  height: 10vh;
   border-radius: 11%;
-  /* margin: 0em 0em 0em 0.5em; */
   display: grid;
   grid-area: Image;
   place-items: center;

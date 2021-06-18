@@ -1,7 +1,7 @@
 //@ts-check
 
-import { useEffect, useState } from 'react'
 import SearchPage from '../src/pages/SearchPage'
+import { useState, useEffect } from 'react'
 import DetailPage from './pages/DetailPage'
 import getConcertDetails from './services/getConcertDetails'
 
@@ -32,7 +32,7 @@ export default function App() {
           pageName="Suche"
           concerts={concerts}
           onNavigate={handleClickDetails}
-          setCity={newCity}
+          onSubmit={chosenCity}
         />
       )}
 
@@ -46,7 +46,7 @@ export default function App() {
     </>
   )
 
-  function newCity(city) {
+  function chosenCity(city) {
     setCurrentCity(city)
   }
 

@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types'
-import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 import ConcertCard from '../components/ConcertCard'
 import Heading from '../components/Header'
+import React from 'react'
 import SearchInput from '../components/SearchInput'
 
 SearchPage.propTypes = {
@@ -10,19 +10,19 @@ SearchPage.propTypes = {
   concerts: PropTypes.array,
   onClick: PropTypes.func,
   onNavigate: PropTypes.func,
-  setCity: PropTypes.func,
+  onSubmit: PropTypes.func,
 }
 
 export default function SearchPage({
   pageName,
   onNavigate,
   concerts,
-  setCity,
+  onSubmit,
 }) {
   return (
     <>
       <Heading pageName={pageName} />
-      <SearchInput setCity={setCity} />
+      <SearchInput onSubmit={onSubmit} />
       <ConcertList>
         {concerts.map(concert => (
           <ConcertCard
@@ -30,7 +30,7 @@ export default function SearchPage({
             date={concert.shortDate}
             artist={concert.artist}
             location={concert.location}
-            image3_2={concert.image3_2}
+            image3_2={concert.image3x2}
             price={concert.price}
             onClick={() => onNavigate(concert.id)}
           />

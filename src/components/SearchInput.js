@@ -5,16 +5,16 @@ import styled from 'styled-components/macro'
 import Button from '../components/Button'
 
 SearchInput.propTypes = {
-  setCity: PropType.func,
+  onSubmit: PropType.func.isRequired,
 }
 
-export default function SearchInput({ setCity }) {
+export default function SearchInput({ onSubmit }) {
   return (
-    <SearchForm onSubmit={handleSubmit}>
+    <SearchForm onSubmit={handleSubmit} aria-label="form">
       <SearchInputField
         type="text"
         name="searchCity"
-        placeholder="Berlin, Hamburg oder Bremen"
+        placeholder="z.B. Bremen, Hamburg"
       />
       <SearchButton>🔍</SearchButton>
     </SearchForm>
@@ -23,7 +23,7 @@ export default function SearchInput({ setCity }) {
   function handleSubmit(event) {
     event.preventDefault()
     const city = event.target.elements.searchCity.value
-    setCity(city)
+    onSubmit(city)
   }
 }
 
@@ -31,19 +31,20 @@ const SearchForm = styled.form`
   display: flex;
   justify-content: center;
   grid-gap: 5px;
-  margin: 10px;
-  margin-top: 50px;
+  margin: 60px 10px 10px;
 `
 
 const SearchInputField = styled.input`
   line-height: 1.8;
-  font-size: small;
+  border: 1px solid var(--black);
+  font-size: medium;
   cursor: pointer;
-  width: 200px;
+  width: 400;
 `
 
 const SearchButton = styled(Button)`
   background-color: var(--light-purple);
   border: 0.8px solid var(--black);
-  padding: 2px;
+  padding: 5px;
+  cursor: pointer;
 `

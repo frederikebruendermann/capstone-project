@@ -14,7 +14,7 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
     <div>
       <Heading pageName={pageName} />
       <Wrapper>
-        <Image src={concert.image16_9} alt="" />
+        <Image src={concert.image16x9} alt="" />
         <ArtistContainer>
           <span>{concert.artist}</span>
         </ArtistContainer>
