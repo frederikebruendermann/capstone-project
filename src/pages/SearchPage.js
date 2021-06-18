@@ -21,7 +21,7 @@ export default function SearchPage({
 }) {
   return (
     <>
-      <main>
+      <SearchContainer>
         <Heading pageName={pageName} />
         <SearchInput onSubmit={onSubmit} />
         <ConcertList>
@@ -37,7 +37,7 @@ export default function SearchPage({
             />
           ))}
         </ConcertList>
-      </main>
+      </SearchContainer>
     </>
   )
 }
@@ -47,4 +47,7 @@ const ConcertList = styled.ul`
   display: grid;
   justify-content: center;
   overflow-y: auto;
+`
+const SearchContainer = styled.main`
+  margin: 10px;
 `
