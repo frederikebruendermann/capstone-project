@@ -65,5 +65,5 @@ export default function App() {
 }
 
 const AppContainer = styled.main`
-  max-width: 400px;
+  max-width: 350px;
 `
