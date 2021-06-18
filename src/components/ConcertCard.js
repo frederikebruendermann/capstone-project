@@ -42,7 +42,7 @@ const Wrapper = styled.section`
   width: 50vh;
   border-radius: 10px;
   background: var(--white);
-  box-shadow: 0 0.5px 1px 0 var(--light-grey), 0 2px 1px 0 var(--light-grey);
+  box-shadow: var(--light-grey) 0px 2px 5px -1px, var(--black) 0px 1px 3px -1px;
   font-family: Helvetica Neue;
   font-weight: 200;
   letter-spacing: 0.1em;

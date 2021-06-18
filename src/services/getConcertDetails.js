@@ -1,6 +1,6 @@
 export default function getConcertDetails(concert) {
-  const getPrice = concert.priceRanges ? concert.priceRanges[0].min : 'TBA'
-  const price = getPrice === 'TBA' ? 'TBA' : 'ab ' + getPrice.toFixed(2) + ' €'
+  const rawPrice = concert.priceRanges ? concert.priceRanges[0].min : 'TBA'
+  const price = rawPrice === 'TBA' ? 'TBA' : 'ab ' + rawPrice.toFixed(2) + ' €'
 
   const index3x2 = concert.images.findIndex(image => image.ratio === '3_2')
   const index16x9 = concert.images.findIndex(image => image.ratio === '16_9')

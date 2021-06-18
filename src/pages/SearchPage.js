@@ -21,26 +21,28 @@ export default function SearchPage({
 }) {
   return (
     <>
-      <Heading pageName={pageName} />
-      <SearchInput onSubmit={onSubmit} />
-      <ConcertList>
-        {concerts.map(concert => (
-          <ConcertCard
-            key={concert.id}
-            date={concert.shortDate}
-            artist={concert.artist}
-            location={concert.location}
-            image3_2={concert.image3x2}
-            price={concert.price}
-            onClick={() => onNavigate(concert.id)}
-          />
-        ))}
-      </ConcertList>
+      <main>
+        <Heading pageName={pageName} />
+        <SearchInput onSubmit={onSubmit} />
+        <ConcertList>
+          {concerts.map(concert => (
+            <ConcertCard
+              key={concert.id}
+              date={concert.shortDate}
+              artist={concert.artist}
+              location={concert.location}
+              image3_2={concert.image3x2}
+              price={concert.price}
+              onClick={() => onNavigate(concert.id)}
+            />
+          ))}
+        </ConcertList>
+      </main>
     </>
   )
 }
 
-const ConcertList = styled.li`
+const ConcertList = styled.ul`
   padding: 5px;
   display: grid;
   justify-content: center;

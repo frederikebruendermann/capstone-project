@@ -36,7 +36,7 @@ const SearchForm = styled.form`
 
 const SearchInputField = styled.input`
   line-height: 1.8;
-  border: 1px solid var(--black);
+  border: 1px solid var(--light-grey);
   font-size: medium;
   cursor: pointer;
   width: 400;
@@ -44,7 +44,7 @@ const SearchInputField = styled.input`
 
 const SearchButton = styled(Button)`
   background-color: var(--light-purple);
-  border: 0.8px solid var(--black);
+  border: 1px solid var(--light-grey);
   padding: 5px;
   cursor: pointer;
 `
