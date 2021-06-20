@@ -1,25 +1,43 @@
-import SearchPage from "../src/pages/SearchPage";
-import { useState } from "react";
-import DetailPage from "./pages/DetailPage";
-import data from "../src/data.json";
-import getConcertDetails from "./services/getConcertDetails";
+//@ts-check
+
+import SearchPage from '../src/pages/SearchPage'
+import { useState, useEffect } from 'react'
+import DetailPage from './pages/DetailPage'
+import getConcertDetails from './services/getConcertDetails'
+import styled from 'styled-components/macro'
 
 export default function App() {
-  const [activePage, setActivePage] = useState("suche");
-  const [concertDetails, setConcertDetails] = useState({});
-  const concerts = data.map((item) => getConcertDetails(item));
+  const [activePage, setActivePage] = useState('suche')
+  const url =
+    'https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&sort=date,asc&countryCode=DE&classificationName=music'
+  const [data, setData] = useState([])
+  const [currentCity, setCurrentCity] = useState('Bremen')
+
+  useEffect(() => {
+    const cityQuery = `&city=${currentCity}`
+    fetch(url + cityQuery)
+      .then(res => res.json())
+      .then(res => {
+        setData(res._embedded.events)
+      })
+      .catch(error => console.error(error))
+  }, [url, currentCity])
+
+  const [concertDetails, setConcertDetails] = useState({})
+  const concerts = data.map(item => getConcertDetails(item))
 
   return (
     <>
-      {activePage === "suche" && (
+      {activePage === 'suche' && (
         <SearchPage
           pageName="Suche"
           concerts={concerts}
           onNavigate={handleClickDetails}
+          onSubmit={chosenCity}
         />
       )}
 
-      {activePage === "details" && (
+      {activePage === 'details' && (
         <DetailPage
           pageName="Details"
           concert={concertDetails}
@@ -27,15 +45,19 @@ export default function App() {
         />
       )}
     </>
-  );
+  )
+
+  function chosenCity(city) {
+    setCurrentCity(city)
+  }
 
   function handleClickDetails(id) {
-    const index = concerts.findIndex((concert) => concert.id === id);
-    setConcertDetails(concerts[index]);
-    setActivePage("details");
+    const index = concerts.findIndex(concert => concert.id === id)
+    setConcertDetails(concerts[index])
+    setActivePage('details')
   }
 
   function handleClickBack() {
-    setActivePage("suche");
+    setActivePage('suche')
   }
 }

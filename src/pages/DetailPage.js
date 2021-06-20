@@ -1,20 +1,20 @@
-import PropTypes from "prop-types";
-import styled from "styled-components/macro";
-import Heading from "../components/Header";
-import Button from "../components/Button";
+import PropTypes from 'prop-types'
+import styled from 'styled-components/macro'
+import Button from '../components/Button'
+import Heading from '../components/Header'
 
 DetailPage.propTypes = {
   concert: PropTypes.object,
   onNavigate: PropTypes.func,
   pageName: PropTypes.string,
-};
+}
 
 export default function DetailPage({ concert, onNavigate, pageName }) {
   return (
     <div>
       <Heading pageName={pageName} />
       <Wrapper>
-        <Image src={concert.image} alt="" />
+        <Image src={concert.image16x9} alt="" />
         <ArtistContainer>
           <span>{concert.artist}</span>
         </ArtistContainer>
@@ -22,26 +22,30 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
           <Facts>
             <tr>
               <td>Location: </td>
-              <td>{concert.location}</td>
+              <td>
+                {concert.location}, {concert.city}
+              </td>
             </tr>
             <tr>
               <td>Termin: </td>
-              <td>{concert.date}</td>
+              <td>{concert.shortDate}</td>
             </tr>
             <tr>
-              <td>Preis: </td>
+              <td>Link: </td>
+              <td>
+                <a href={concert.link}>www.ticketmaster.de</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Preis:</td>
               <td>{concert.price}</td>
-            </tr>
-            <tr>
-              <td>Termin:</td>
-              <td>www.eventim.de </td>
             </tr>
           </Facts>
         </DetailsContainer>
       </Wrapper>
       <Button onClick={onNavigate}>&lt;-- back </Button>
     </div>
-  );
+  )
 }
 
 const Wrapper = styled.div`
@@ -52,11 +56,11 @@ const Wrapper = styled.div`
   grid-template-columns: 30% 30% 30%;
   grid-template-rows: 10% 10% 35% 35%;
   grid-template-areas:
-    "Image Image Image"
-    "Image Image Image"
-    "Artist Artist Artist"
-    "Details Details Details";
-`;
+    'Image Image Image'
+    'Image Image Image'
+    'Artist Artist Artist'
+    'Details Details Details';
+`
 
 const Image = styled.img`
   width: 100%;
@@ -65,14 +69,14 @@ const Image = styled.img`
   grid-area: Image;
   display: grid;
   justify-items: center;
-`;
+`
 
 const ArtistContainer = styled.p`
   grid-area: Artist;
   padding: 10px 20px 0px 20px;
   letter-spacing: 0.1rem;
   margin-bottom: 20px; ;
-`;
+`
 
 const DetailsContainer = styled.table`
         padding: 0px 20px;
@@ -81,5 +85,5 @@ const DetailsContainer = styled.table`
         grid-template-rows: 1fr;
         grid-template-columns: 1fr fr;
         grid-template-areas: "Facts FactsData;
-      `;
-const Facts = styled.tbody``;
+      `
+const Facts = styled.tbody``

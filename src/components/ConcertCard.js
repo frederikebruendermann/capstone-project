@@ -1,7 +1,6 @@
-import styled from "styled-components/macro";
-import PropTypes from "prop-types";
-import "../GlobalStyles";
-import "../data.json";
+import PropTypes from 'prop-types'
+import styled from 'styled-components/macro'
+import '../GlobalStyles'
 
 ConcertCard.propTypes = {
   concerts: PropTypes.arrayOf(
@@ -10,36 +9,30 @@ ConcertCard.propTypes = {
       artist: PropTypes.string,
       location: PropTypes.string,
       id: PropTypes.string,
-      image: PropTypes.node,
-      price: PropTypes.string,
+      image3x2: PropTypes.string,
+      price: PropTypes.number,
     })
   ),
   onClick: PropTypes.func,
-};
+}
 
 export default function ConcertCard({
   date,
   artist,
   location,
-  image,
+  image3_2,
   onClick,
 }) {
-  const createDate = date.split(", ");
-  const shortDate = [createDate[1].replace(",", " ")];
-
-  const createLocation = location.split(",");
-  const shortLocation = [createLocation[1].replace(",", " ")];
-
   return (
     <Wrapper onClick={onClick}>
       <TextStyle>
-        <DateStyle>{shortDate}</DateStyle>
+        <DateStyle>{date}</DateStyle>
         <ArtistStyle>{artist}</ArtistStyle>
-        <LocationStyle>{shortLocation}</LocationStyle>
+        <LocationStyle>{location}</LocationStyle>
       </TextStyle>
-      <Image src={image} alt="" />
+      <Image src={image3_2} alt="" height="80px" width="auto" />
     </Wrapper>
-  );
+  )
 }
 
 const Wrapper = styled.section`
@@ -49,16 +42,16 @@ const Wrapper = styled.section`
   width: 50vh;
   border-radius: 10px;
   background: var(--white);
-  box-shadow: 0 0.2px 2px 0 #dbd7d7, 0 1px 1px 0 #dbd7d7;
+  box-shadow: var(--light-grey) 0px 2px 5px -1px, var(--black) 0px 1px 3px -1px;
   font-family: Helvetica Neue;
   font-weight: 200;
   letter-spacing: 0.1em;
   list-style: none;
   display: grid;
-  grid-template-columns: 75% 25%;
-  grid-template-rows: 7ch;
-  grid-template-areas: "Text Image";
-`;
+  grid-template-columns: 7fr 3fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'Text Image';
+`
 
 const TextStyle = styled.section`
   text-align: left;
@@ -68,15 +61,15 @@ const TextStyle = styled.section`
   grid-template-rows: 10px 30px 10px;
   gap: 5px 5px;
   grid-template-areas:
-    "Date"
-    "Artist"
-    "Location";
-`;
+    'Date'
+    'Artist'
+    'Location';
+`
 
 const DateStyle = styled.span`
   font-size: 13px;
   grid-area: Date;
-`;
+`
 
 const ArtistStyle = styled.div`
   font-size: 15px;
@@ -86,20 +79,17 @@ const ArtistStyle = styled.div`
   white-space: nowrap;
   overflow: hidden;
   max-width: 24ch;
-`;
+`
 
 const LocationStyle = styled.span`
   font-size: 13px;
   grid-area: Location;
   color: var(--light-grey);
-`;
+`
 
 const Image = styled.img`
-  height: 10vh;
   border-radius: 11%;
-  margin: 0em 0em 0em 0.5em;
-  padding: 0px;
   display: grid;
   grid-area: Image;
-  place-items: right;
-`;
+  place-items: center;
+`

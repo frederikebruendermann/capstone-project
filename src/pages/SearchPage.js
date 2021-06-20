@@ -1,40 +1,50 @@
-import styled from "styled-components/macro";
-import PropTypes from "prop-types";
-import ConcertCard from "../components/ConcertCard";
-import Heading from "../components/Header";
+import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+import ConcertCard from '../components/ConcertCard'
+import Heading from '../components/Header'
+import React from 'react'
+import SearchInput from '../components/SearchInput'
 
 SearchPage.propTypes = {
   pageName: PropTypes.string,
   concerts: PropTypes.array,
   onClick: PropTypes.func,
   onNavigate: PropTypes.func,
-};
-
-export default function SearchPage({ pageName, onNavigate, concerts }) {
-  return (
-    <>
-      <Heading pageName={pageName} />
-      <ConcertList>
-        {concerts.map((concert) => (
-          <ConcertCard
-            key={concert.id}
-            date={concert.date}
-            artist={concert.artist}
-            location={concert.location}
-            image={concert.image}
-            price={concert.price}
-            onClick={() => onNavigate(concert.id)}
-          />
-        ))}
-      </ConcertList>
-    </>
-  );
+  onSubmit: PropTypes.func,
 }
 
-const ConcertList = styled.li`
+export default function SearchPage({
+  pageName,
+  onNavigate,
+  concerts,
+  onSubmit,
+}) {
+  return (
+    <>
+      <main>
+        <Heading pageName={pageName} />
+        <SearchInput onSubmit={onSubmit} />
+        <ConcertList>
+          {concerts.map(concert => (
+            <ConcertCard
+              key={concert.id}
+              date={concert.shortDate}
+              artist={concert.artist}
+              location={concert.location}
+              image3_2={concert.image3x2}
+              price={concert.price}
+              onClick={() => onNavigate(concert.id)}
+            />
+          ))}
+        </ConcertList>
+      </main>
+    </>
+  )
+}
+
+const ConcertList = styled.ul`
   padding: 5px;
-  margin-top: 50px;
   display: grid;
   justify-content: center;
   overflow-y: auto;
-`;
+`
