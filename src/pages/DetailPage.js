@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import Button from '../components/Button'
 import Heading from '../components/Header'
+import Bookmark from '../components/Bookmark'
 
 DetailPage.propTypes = {
   concert: PropTypes.object,
@@ -17,6 +18,7 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
         <Image src={concert.image16x9} alt="" />
         <ArtistContainer>
           <span>{concert.artist}</span>
+          <Bookmark></Bookmark>
         </ArtistContainer>
         <DetailsContainer>
           <Facts>
@@ -75,7 +77,8 @@ const ArtistContainer = styled.p`
   grid-area: Artist;
   padding: 10px 20px 0px 20px;
   letter-spacing: 0.1rem;
-  margin-bottom: 20px; ;
+  margin-bottom: 20px;
+  display: flex;
 `
 
 const DetailsContainer = styled.table`

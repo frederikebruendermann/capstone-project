@@ -4,7 +4,6 @@ import SearchPage from '../src/pages/SearchPage'
 import { useState, useEffect } from 'react'
 import DetailPage from './pages/DetailPage'
 import getConcertDetails from './services/getConcertDetails'
-import styled from 'styled-components/macro'
 
 export default function App() {
   const [activePage, setActivePage] = useState('suche')
