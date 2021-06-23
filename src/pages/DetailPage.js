@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
-import Button from '../components/Button'
 import Heading from '../components/Header'
 import Bookmark from '../components/Bookmark'
 
@@ -18,7 +17,7 @@ export default function DetailPage({
 }) {
   return (
     <div>
-      <Heading pageName={pageName} />
+      <Heading pageName={pageName} onNavigate={onNavigate} />
       <Wrapper>
         <Image src={concert.image16x9} alt="" />
         <ArtistContainer>
@@ -53,7 +52,7 @@ export default function DetailPage({
           </Facts>
         </DetailsContainer>
       </Wrapper>
-      <Button onClick={onNavigate}>&lt;-- back </Button>
+      {/* <Button onClick={onNavigate}>&lt;-- back </Button> */}
     </div>
   )
 }
