@@ -19,7 +19,7 @@ export default function DetailPage({
     <div>
       <Heading pageName={pageName} onNavigate={onNavigate} />
       <Wrapper>
-        <Image src={concert.image16x9} alt="" />
+        <Image src={concert.image16x9} alt="" width="375" height="210" />
         <ArtistContainer>
           <span>{concert.artist}</span>
           <Bookmark
@@ -52,7 +52,6 @@ export default function DetailPage({
           </Facts>
         </DetailsContainer>
       </Wrapper>
-      {/* <Button onClick={onNavigate}>&lt;-- back </Button> */}
     </div>
   )
 }
@@ -74,7 +73,7 @@ const Wrapper = styled.div`
 const Image = styled.img`
   width: 100%;
   height: auto;
-  margin: 60px 0px 0px 0px;
+  margin: 65px 0px 0px 0px;
   grid-area: Image;
   display: grid;
   justify-items: center;
@@ -84,16 +83,20 @@ const ArtistContainer = styled.p`
   grid-area: Artist;
   padding: 10px 20px 0px 20px;
   letter-spacing: 0.1rem;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   display: flex;
+  align-items: center;
 `
 
 const DetailsContainer = styled.table`
   padding: 0px 20px;
+  font-size: 15px;
   display: grid;
   grid-area: Details;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr fr;
   grid-template-areas: 'Facts FactsData';
 `
-const Facts = styled.tbody``
+const Facts = styled.tbody`
+  letter-spacing: 0.1rem;
+`

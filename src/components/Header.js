@@ -13,7 +13,11 @@ export default function Header({ pageName, onNavigate }) {
   return (
     <Heading>
       <Wrapper>
-        <BackButton onClick={onNavigate}>&lt;-- </BackButton>
+        {pageName === 'Details' ? (
+          <BackButton onClick={onNavigate}>&lt;-- </BackButton>
+        ) : (
+          <BackButton hidden />
+        )}
         <Title pageName={pageName} />
       </Wrapper>
       <DividingLine />
@@ -42,4 +46,8 @@ const BackButton = styled(Button)`
   justify-content: flex-start;
   z-index: 1;
   background-color: transparent;
+
+  hidden {
+    display: none;
+  }
 `
