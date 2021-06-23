@@ -4,6 +4,7 @@ import ConcertCard from '../components/ConcertCard'
 import Heading from '../components/Header'
 import React from 'react'
 import SearchInput from '../components/SearchInput'
+// import StartPage from './StartPage'
 
 SearchPage.propTypes = {
   pageName: PropTypes.string,
@@ -37,6 +38,7 @@ export default function SearchPage({
             />
           ))}
         </ConcertList>
+        {/* <button onClick={() => onNavigate(StartPage)}>Home</button> */}
       </main>
     </>
   )
