@@ -18,6 +18,6 @@ const Wrapper = styled.button`
   justify-content: center;
 `
 
-export default function Bookmark() {
-  return <Wrapper>☆</Wrapper>
+export default function Bookmark({ onClick }) {
+  return <Wrapper onClick={onClick}>☆</Wrapper>
 }

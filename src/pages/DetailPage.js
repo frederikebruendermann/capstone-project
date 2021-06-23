@@ -10,7 +10,12 @@ DetailPage.propTypes = {
   pageName: PropTypes.string,
 }
 
-export default function DetailPage({ concert, onNavigate, pageName }) {
+export default function DetailPage({
+  concert,
+  onNavigate,
+  pageName,
+  handleBookmark,
+}) {
   return (
     <div>
       <Heading pageName={pageName} />
@@ -18,7 +23,7 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
         <Image src={concert.image16x9} alt="" />
         <ArtistContainer>
           <span>{concert.artist}</span>
-          <Bookmark></Bookmark>
+          <Bookmark onClick={getBookmarkId}></Bookmark>
         </ArtistContainer>
         <DetailsContainer>
           <Facts>
@@ -48,6 +53,11 @@ export default function DetailPage({ concert, onNavigate, pageName }) {
       <Button onClick={onNavigate}>&lt;-- back </Button>
     </div>
   )
+
+  function getBookmarkId() {
+    handleBookmark(concert.id)
+    console.log(concert.id)
+  }
 }
 
 const Wrapper = styled.div`

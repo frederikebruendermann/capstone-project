@@ -9,15 +9,9 @@ StartPage.propTypes = {
   bookmarks: PropTypes.array,
   onNavigate: PropTypes.func,
   concerts: PropTypes.array,
-  handleBookmark: PropTypes.func,
 }
 
-export default function StartPage(
-  pageName,
-  handleBookmark,
-  bookmarks,
-  onNavigate
-) {
+export default function StartPage(pageName, bookmarks, onNavigate) {
   return (
     <div>
       <Heading pageName={pageName} />

@@ -25,6 +25,8 @@ export default function App() {
   const [concertDetails, setConcertDetails] = useState({})
   const concerts = data.map(item => getConcertDetails(item))
 
+  function handleBookmark() {}
+
   return (
     <>
       {activePage === 'suche' && (
@@ -41,6 +43,7 @@ export default function App() {
           pageName="Details"
           concert={concertDetails}
           onNavigate={handleClickBack}
+          handleBookmark={handleBookmark}
         />
       )}
     </>
