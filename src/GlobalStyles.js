@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
 body {
   margin: 0;
-  font-family: Helvetica Neue, sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 112.5%;
   font-weight: 200;
   background-color: white;
@@ -29,7 +29,7 @@ button,
 textarea, 
 p {
   font-size: inherit;
-  font-family: Helvetica Neue;
+  font-family: 'Helvetica Neue';
   font-weight: 200;
 }
 
@@ -38,6 +38,7 @@ h1{
   justify-content: center;
   color: var(--black);
   font-size: 20px;
+  line-height: 2.5;
   text-transform: uppercase;
   font-family: Helvetica Neue;
   letter-spacing: 0.1em;

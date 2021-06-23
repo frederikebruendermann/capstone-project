@@ -1,23 +1,27 @@
 import styled from 'styled-components/macro'
 
+export default function Bookmark({ onClick, isActive }) {
+  return (
+    <Wrapper isActive={isActive} onClick={onClick}>
+      ☆
+    </Wrapper>
+  )
+}
+
 const Wrapper = styled.button`
   position: absolute;
-  width: 52px;
-  height: 52px;
+  width: 40px;
+  height: 40px;
   right: 16px;
   color: var(--white);
-  font-size: 50px;
+  font-size: 30px;
   cursor: pointer;
-  background-color: var(--light-purple);
-  /* background-color: ${concerts =>
-    concerts.isBookmarked ? 'var(--purple)' : 'var(--light-purple)'}; */
+  background-color: ${props =>
+    props.isActive ? 'var(--purple)' : 'var(--light-purple)'};
   box-shadow: none;
-  border: 1px solid #a09b9b;
+  border: none;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 `
-
-export default function Bookmark({ onClick }) {
-  return <Wrapper onClick={onClick}>☆</Wrapper>
-}

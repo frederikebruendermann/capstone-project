@@ -14,7 +14,7 @@ export default function DetailPage({
   concert,
   onNavigate,
   pageName,
-  handleBookmark,
+  onBookmark,
 }) {
   return (
     <div>
@@ -23,7 +23,10 @@ export default function DetailPage({
         <Image src={concert.image16x9} alt="" />
         <ArtistContainer>
           <span>{concert.artist}</span>
-          <Bookmark onClick={getBookmarkId}></Bookmark>
+          <Bookmark
+            isActive={concert.isBookmarked}
+            onClick={onBookmark}
+          ></Bookmark>
         </ArtistContainer>
         <DetailsContainer>
           <Facts>
@@ -53,11 +56,6 @@ export default function DetailPage({
       <Button onClick={onNavigate}>&lt;-- back </Button>
     </div>
   )
-
-  function getBookmarkId() {
-    handleBookmark(concert.id)
-    console.log(concert.id)
-  }
 }
 
 const Wrapper = styled.div`
@@ -92,11 +90,11 @@ const ArtistContainer = styled.p`
 `
 
 const DetailsContainer = styled.table`
-        padding: 0px 20px;
-        display: grid;
-        grid-area: Details;
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr fr;
-        grid-template-areas: "Facts FactsData;
-      `
+  padding: 0px 20px;
+  display: grid;
+  grid-area: Details;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr fr;
+  grid-template-areas: 'Facts FactsData';
+`
 const Facts = styled.tbody``
