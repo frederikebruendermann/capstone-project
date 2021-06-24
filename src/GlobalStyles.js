@@ -43,6 +43,16 @@ h1{
   font-weight: 200;
 }
 
+h2{
+  display: grid;
+  justify-content: start;
+  color: var(--black);
+  font-size: 20px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 200;
+}
 
 
 `
