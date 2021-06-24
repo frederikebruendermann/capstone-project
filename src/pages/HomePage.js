@@ -1,7 +1,7 @@
 import Heading from '../components/Header'
 import PropTypes from 'prop-types'
-import ConcertList from '../pages/SearchPage'
 import ConcertCard from '../components/ConcertCard'
+import styled from 'styled-components/macro'
 
 HomePage.propTypes = {
   pageName: PropTypes.string,
@@ -13,25 +13,35 @@ export default function HomePage({ bookmarks, pageName, onNavigate }) {
   return (
     <div>
       <Heading pageName={pageName} />
-      <ConcertList>
-        {bookmarks.length === 0 ? (
-          <p>Du hast Dir noch keine Konzerte gemerkt.</p>
-        ) : (
-          <>
-            {bookmarks.map(concert => (
-              <ConcertCard
-                key={concert.id}
-                date={concert.shortDate}
-                artist={concert.artist}
-                location={concert.location}
-                image3_2={concert.image3x2}
-                price={concert.price}
-                onClick={() => onNavigate(concert.id)}
-              />
-            ))}
-          </>
-        )}
-      </ConcertList>
+
+      {bookmarks.length === 0 ? (
+        <Text>Du hast Dir noch keine Konzerte gemerkt.</Text>
+      ) : (
+        <ConcertList>
+          {bookmarks.map(concert => (
+            <ConcertCard
+              key={concert.id}
+              date={concert.shortDate}
+              artist={concert.artist}
+              location={concert.location}
+              image3x2={concert.image3x2}
+              price={concert.price}
+              onClick={() => onNavigate(concert.id)}
+            />
+          ))}
+        </ConcertList>
+      )}
     </div>
   )
 }
+
+const ConcertList = styled.ul`
+  padding: 5px;
+  display: grid;
+  justify-content: center;
+  overflow-y: auto;
+  margin: 75px 10px 10px;
+`
+const Text = styled.p`
+  margin: 75px 10px 10px;
+`
