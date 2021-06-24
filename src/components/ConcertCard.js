@@ -20,7 +20,7 @@ export default function ConcertCard({
   date,
   artist,
   location,
-  image3_2,
+  image3x2,
   onClick,
 }) {
   return (
@@ -30,7 +30,7 @@ export default function ConcertCard({
         <ArtistStyle>{artist}</ArtistStyle>
         <LocationStyle>{location}</LocationStyle>
       </TextStyle>
-      <Image src={image3_2} alt="" height="80px" width="auto" />
+      <Image src={image3x2} alt="" height="80px" width="auto" />
     </Wrapper>
   )
 }
@@ -43,7 +43,7 @@ const Wrapper = styled.section`
   border-radius: 10px;
   background: var(--white);
   box-shadow: var(--light-grey) 0px 2px 5px -1px, var(--black) 0px 1px 3px -1px;
-  font-family: Helvetica Neue;
+  font-family: inherit;
   font-weight: 200;
   letter-spacing: 0.1em;
   list-style: none;

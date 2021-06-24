@@ -1,29 +1,24 @@
 //@ts-check
 
-import SearchPage from '../src/pages/SearchPage'
 import { useState, useEffect } from 'react'
+import SearchPage from '../src/pages/SearchPage'
 import DetailPage from './pages/DetailPage'
-import getConcertDetails from './services/getConcertDetails'
+import getConcertsOfCity from './services/getConcertsOfCity'
 
 export default function App() {
   const [activePage, setActivePage] = useState('suche')
-  const url =
-    'https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&sort=date,asc&countryCode=DE&classificationName=music'
-  const [data, setData] = useState([])
+  const [concerts, setConcerts] = useState([])
+  const [concertId, setConcertId] = useState(null)
   const [currentCity, setCurrentCity] = useState('Bremen')
+  const concertDetails = concerts.find(concert => concert.id === concertId)
 
   useEffect(() => {
-    const cityQuery = `&city=${currentCity}`
-    fetch(url + cityQuery)
-      .then(res => res.json())
-      .then(res => {
-        setData(res._embedded.events)
+    getConcertsOfCity(currentCity)
+      .then(concerts => {
+        setConcerts(concerts)
       })
       .catch(error => console.error(error))
-  }, [url, currentCity])
-
-  const [concertDetails, setConcertDetails] = useState({})
-  const concerts = data.map(item => getConcertDetails(item))
+  }, [currentCity])
 
   return (
     <>
@@ -41,6 +36,7 @@ export default function App() {
           pageName="Details"
           concert={concertDetails}
           onNavigate={handleClickBack}
+          onBookmark={handleBookmark}
         />
       )}
     </>
@@ -51,12 +47,22 @@ export default function App() {
   }
 
   function handleClickDetails(id) {
-    const index = concerts.findIndex(concert => concert.id === id)
-    setConcertDetails(concerts[index])
+    setConcertId(id)
     setActivePage('details')
   }
 
   function handleClickBack() {
     setActivePage('suche')
+  }
+
+  function handleBookmark() {
+    const index = concerts.findIndex(concert => concert.id === concertId)
+    const concert = concerts[index]
+
+    setConcerts([
+      ...concerts.slice(0, index),
+      { ...concert, isBookmarked: !concert.isBookmarked },
+      ...concerts.slice(index + 1),
+    ])
   }
 }
