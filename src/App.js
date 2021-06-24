@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import SearchPage from '../src/pages/SearchPage'
 import DetailPage from './pages/DetailPage'
+import HomePage from './pages/HomePage'
 import getConcertsOfCity from './services/getConcertsOfCity'
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
   const [concertId, setConcertId] = useState(null)
   const [currentCity, setCurrentCity] = useState('Bremen')
   const concertDetails = concerts.find(concert => concert.id === concertId)
+  const bookmarks = concerts.filter(concert => concert.isBookmarked)
 
   useEffect(() => {
     getConcertsOfCity(currentCity)
@@ -19,6 +21,8 @@ export default function App() {
       })
       .catch(error => console.error(error))
   }, [currentCity])
+
+  console.log(bookmarks)
 
   return (
     <>
@@ -37,6 +41,14 @@ export default function App() {
           concert={concertDetails}
           onNavigate={handleClickBack}
           onBookmark={handleBookmark}
+        />
+      )}
+
+      {activePage === 'home' && (
+        <HomePage
+          pageName="ConcertLife"
+          bookmarks={bookmarks}
+          onNavigate={handleClickDetails}
         />
       )}
     </>
