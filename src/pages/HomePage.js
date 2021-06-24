@@ -2,7 +2,6 @@ import Heading from '../components/Header'
 import PropTypes from 'prop-types'
 import ConcertCard from '../components/ConcertCard'
 import styled from 'styled-components/macro'
-import Bookmark from '../components/Bookmark'
 
 HomePage.propTypes = {
   pageName: PropTypes.string,
@@ -57,7 +56,7 @@ const ConcertList = styled.ul`
   display: grid;
   justify-content: center;
   overflow-y: auto;
-  margin: 10px 10px 10px;
+  margin-top: 10px;
 `
 const Text = styled.p`
   margin: 10px 10px 10px;
