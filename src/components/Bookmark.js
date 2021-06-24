@@ -2,7 +2,7 @@ import styled from 'styled-components/macro'
 
 export default function Bookmark({ onClick, isActive }) {
   return (
-    <Wrapper isActive={isActive} onClick={onClick}>
+    <Wrapper aria-label="Bookmark" isActive={isActive} onClick={onClick}>
       ☆
     </Wrapper>
   )

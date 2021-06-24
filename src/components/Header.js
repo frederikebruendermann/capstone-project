@@ -14,7 +14,9 @@ export default function Header({ pageName, onNavigate }) {
     <Heading>
       <Wrapper>
         {pageName === 'Details' ? (
-          <BackButton onClick={onNavigate}>&lt;-- </BackButton>
+          <BackButton aria-label="Button" onClick={onNavigate}>
+            &lt;--{' '}
+          </BackButton>
         ) : (
           <BackButton hidden />
         )}
@@ -28,7 +30,7 @@ export default function Header({ pageName, onNavigate }) {
 const Heading = styled.header`
   position: fixed;
   left: 0;
-  font-family: 'Helvetica Neue';
+  font-family: inherit;
   font-weight: 200;
   letter-spacing: 0.2em;
   background: white;

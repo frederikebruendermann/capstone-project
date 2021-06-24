@@ -20,17 +20,6 @@ export default function App() {
       .catch(error => console.error(error))
   }, [currentCity])
 
-  function handleBookmark() {
-    const index = concerts.findIndex(concert => concert.id === concertId)
-    const concert = concerts[index]
-
-    setConcerts([
-      ...concerts.slice(0, index),
-      { ...concert, isBookmarked: !concert.isBookmarked },
-      ...concerts.slice(index + 1),
-    ])
-  }
-
   return (
     <>
       {activePage === 'suche' && (
@@ -64,5 +53,16 @@ export default function App() {
 
   function handleClickBack() {
     setActivePage('suche')
+  }
+
+  function handleBookmark() {
+    const index = concerts.findIndex(concert => concert.id === concertId)
+    const concert = concerts[index]
+
+    setConcerts([
+      ...concerts.slice(0, index),
+      { ...concert, isBookmarked: !concert.isBookmarked },
+      ...concerts.slice(index + 1),
+    ])
   }
 }

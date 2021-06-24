@@ -43,7 +43,7 @@ const Wrapper = styled.section`
   border-radius: 10px;
   background: var(--white);
   box-shadow: var(--light-grey) 0px 2px 5px -1px, var(--black) 0px 1px 3px -1px;
-  font-family: 'Helvetica Neue';
+  font-family: inherit;
   font-weight: 200;
   letter-spacing: 0.1em;
   list-style: none;

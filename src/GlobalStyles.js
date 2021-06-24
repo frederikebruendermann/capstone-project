@@ -29,7 +29,6 @@ button,
 textarea, 
 p {
   font-size: inherit;
-  font-family: 'Helvetica Neue';
   font-weight: 200;
 }
 
@@ -40,7 +39,6 @@ h1{
   font-size: 20px;
   line-height: 2.5;
   text-transform: uppercase;
-  font-family: Helvetica Neue;
   letter-spacing: 0.1em;
   font-weight: 200;
 }

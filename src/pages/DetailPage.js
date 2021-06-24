@@ -6,6 +6,7 @@ import Bookmark from '../components/Bookmark'
 DetailPage.propTypes = {
   concert: PropTypes.object,
   onNavigate: PropTypes.func,
+  onBookmark: PropTypes.func,
   pageName: PropTypes.string,
 }
 
@@ -22,10 +23,7 @@ export default function DetailPage({
         <Image src={concert.image16x9} alt="" width="375" height="210" />
         <ArtistContainer>
           <span>{concert.artist}</span>
-          <Bookmark
-            isActive={concert.isBookmarked}
-            onClick={onBookmark}
-          ></Bookmark>
+          <Bookmark isActive={concert.isBookmarked} onClick={onBookmark} />
         </ArtistContainer>
         <DetailsContainer>
           <Facts>
