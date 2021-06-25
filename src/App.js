@@ -1,16 +1,20 @@
 //@ts-check
 
-import { useState, useEffect } from 'react'
-import SearchPage from '../src/pages/SearchPage'
-import DetailPage from './pages/DetailPage'
+import { useEffect, useState } from 'react'
+import { Route, Switch, useHistory } from 'react-router-dom'
+import Nav from './components/NavBar/NavBar'
+import DetailPage from './pages/DetailPage/DetailPage'
+import HomePage from './pages/HomePage/HomePage'
+import SearchPage from './pages/SearchPage/SearchPage'
 import getConcertsOfCity from './services/getConcertsOfCity'
 
 export default function App() {
-  const [activePage, setActivePage] = useState('suche')
+  const history = useHistory()
   const [concerts, setConcerts] = useState([])
   const [concertId, setConcertId] = useState(null)
   const [currentCity, setCurrentCity] = useState('Bremen')
   const concertDetails = concerts.find(concert => concert.id === concertId)
+  const bookmarks = concerts.filter(concert => concert.isBookmarked)
 
   useEffect(() => {
     getConcertsOfCity(currentCity)
@@ -22,23 +26,33 @@ export default function App() {
 
   return (
     <>
-      {activePage === 'suche' && (
-        <SearchPage
-          pageName="Suche"
-          concerts={concerts}
-          onNavigate={handleClickDetails}
-          onSubmit={chosenCity}
-        />
-      )}
+      <Switch>
+        <Route path="/suche">
+          <SearchPage
+            pageName="Suche"
+            concerts={concerts}
+            onNavigate={handleClickDetails}
+            onSubmit={chosenCity}
+          />
+        </Route>
 
-      {activePage === 'details' && (
-        <DetailPage
-          pageName="Details"
-          concert={concertDetails}
-          onNavigate={handleClickBack}
-          onBookmark={handleBookmark}
-        />
-      )}
+        <Route path="/details">
+          <DetailPage
+            pageName="Details"
+            concert={concertDetails}
+            onNavigate={handleClickBack}
+            onBookmark={handleBookmark}
+          />
+        </Route>
+        <Route path="/">
+          <HomePage
+            pageName="ConcertLife"
+            bookmarks={bookmarks}
+            onNavigate={handleClickDetails}
+          />
+        </Route>
+      </Switch>
+      <Nav onSearch={handleClickSearch} onHome={handleClickHome} />
     </>
   )
 
@@ -48,11 +62,19 @@ export default function App() {
 
   function handleClickDetails(id) {
     setConcertId(id)
-    setActivePage('details')
+    history.push('/details')
   }
 
   function handleClickBack() {
-    setActivePage('suche')
+    history.goBack()
+  }
+
+  function handleClickSearch() {
+    history.push('/suche')
+  }
+
+  function handleClickHome() {
+    history.push('/')
   }
 
   function handleBookmark() {
