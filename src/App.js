@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react'
 import { Route, Switch, useHistory } from 'react-router-dom'
 import Nav from './components/NavBar/NavBar'
-import DetailPage from './pages/DetailPage'
-import HomePage from './pages/HomePage'
-import SearchPage from './pages/SearchPage'
+import DetailPage from './pages/DetailPage/DetailPage'
+import HomePage from './pages/HomePage/HomePage'
+import SearchPage from './pages/SearchPage/SearchPage'
 import getConcertsOfCity from './services/getConcertsOfCity'
 
 export default function App() {
@@ -24,13 +24,10 @@ export default function App() {
       .catch(error => console.error(error))
   }, [currentCity])
 
-  console.log(bookmarks)
-  console.log(concerts)
-
   return (
     <>
       <Switch>
-        <Route exact path="/suche">
+        <Route path="/suche">
           <SearchPage
             pageName="Suche"
             concerts={concerts}
@@ -39,7 +36,7 @@ export default function App() {
           />
         </Route>
 
-        <Route exact path="/details">
+        <Route path="/details">
           <DetailPage
             pageName="Details"
             concert={concertDetails}
@@ -47,7 +44,7 @@ export default function App() {
             onBookmark={handleBookmark}
           />
         </Route>
-        <Route exact path="/">
+        <Route path="/">
           <HomePage
             pageName="ConcertLife"
             bookmarks={bookmarks}
@@ -55,7 +52,7 @@ export default function App() {
           />
         </Route>
       </Switch>
-      <Nav onClickSearch={handleClickSearch} onClickHome={handleClickHome} />
+      <Nav onSearch={handleClickSearch} onHome={handleClickHome} />
     </>
   )
 

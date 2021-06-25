@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react'
 import NavBar from './NavBar'
 
-describe('it calls onClickSearch when clicking on the navbar', () => {
+describe('it calls onSearch when clicking on the navbar', () => {
   it('renders', () => {
-    const onClickSearch = jest.fn()
+    const onSearch = jest.fn()
 
-    render(<NavBar onClick={onClickSearch} />)
+    render(<NavBar onClick={onSearch} />)
   })
 })

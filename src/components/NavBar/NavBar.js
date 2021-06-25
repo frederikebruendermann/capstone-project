@@ -2,15 +2,15 @@ import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
 NavBar.propTypes = {
-  onClickSearch: PropTypes.func,
-  onClickHome: PropTypes.func,
+  onSearch: PropTypes.func.isRequired,
+  onHome: PropTypes.func.isRequired,
 }
 
-export default function NavBar({ onClickSearch, onClickHome }) {
+export default function NavBar({ onSearch, onHome }) {
   return (
     <Nav>
-      <NavButton onClick={onClickHome}>HOME</NavButton>
-      <NavButton onClick={onClickSearch}>SUCHE</NavButton>
+      <NavButton onClick={onHome}>HOME</NavButton>
+      <NavButton onClick={onSearch}>SUCHE</NavButton>
     </Nav>
   )
 }

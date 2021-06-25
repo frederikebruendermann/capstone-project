@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import HomePage from './HomePage'
 
 describe('HomePage', () => {
-  it('calls onNavigate when clicking on the concert card', () => {
+  it('calls onNavigate when clicking on the concert card and has as text in the header', () => {
     const onNavigate = jest.fn()
     const pageName = 'Test'
 
