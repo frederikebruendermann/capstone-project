@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Route, Switch, useHistory } from 'react-router-dom'
-import Nav from './components/NavBar'
+import Nav from './components/NavBar/NavBar'
 import DetailPage from './pages/DetailPage'
 import HomePage from './pages/HomePage'
 import SearchPage from './pages/SearchPage'

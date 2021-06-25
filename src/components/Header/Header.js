@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
-import Title from '../components/Title'
-import Button from '../components/Button'
-import DividingLine from './DividingLine'
+import Title from '../Title/Title'
+import Button from '../Button/Button'
+import DividingLine from '../DividingLine/DividingLine'
 
 Header.propTypes = {
   pageName: PropTypes.node,

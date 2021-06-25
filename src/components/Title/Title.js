@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
-import '../GlobalStyles'
+import '../../GlobalStyles'
 
 Title.propTypes = {
   pageName: PropTypes.string.isRequired,

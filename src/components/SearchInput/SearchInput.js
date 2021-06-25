@@ -2,7 +2,7 @@
 
 import PropType from 'prop-types'
 import styled from 'styled-components/macro'
-import Button from '../components/Button'
+import Button from '../Button/Button'
 
 SearchInput.propTypes = {
   onSubmit: PropType.func.isRequired,

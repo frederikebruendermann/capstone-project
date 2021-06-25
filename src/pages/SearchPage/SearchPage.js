@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components/macro'
-import ConcertCard from '../components/ConcertCard'
-import Heading from '../components/Header'
-import SearchInput from '../components/SearchInput'
+import ConcertCard from '../components/ConcertCard/ConcertCard'
+import Heading from '../components/Header/Header'
+import SearchInput from '../components/SearchInput/SearchInput'
 
 SearchPage.propTypes = {
   pageName: PropTypes.string,
