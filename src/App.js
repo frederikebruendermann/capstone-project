@@ -1,12 +1,12 @@
 //@ts-check
 
-import { useState, useEffect } from 'react'
-import SearchPage from './pages/SearchPage'
-import DetailPage from './pages/DetailPage'
+import { useEffect, useState } from 'react'
 import { Route, Switch, useHistory } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import getConcertsOfCity from './services/getConcertsOfCity'
 import Nav from './components/NavBar'
+import DetailPage from './pages/DetailPage'
+import HomePage from './pages/HomePage'
+import SearchPage from './pages/SearchPage'
+import getConcertsOfCity from './services/getConcertsOfCity'
 
 export default function App() {
   const history = useHistory()

@@ -1,7 +1,7 @@
-import Heading from '../components/Header'
 import PropTypes from 'prop-types'
-import ConcertCard from '../components/ConcertCard'
 import styled from 'styled-components/macro'
+import ConcertCard from '../components/ConcertCard'
+import Heading from '../components/Header'
 
 HomePage.propTypes = {
   pageName: PropTypes.string,

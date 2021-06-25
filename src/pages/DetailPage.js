@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
-import Heading from '../components/Header'
 import Bookmark from '../components/Bookmark'
+import Heading from '../components/Header'
 
 DetailPage.propTypes = {
   concert: PropTypes.object,
