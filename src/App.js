@@ -6,7 +6,9 @@ import Nav from './components/NavBar/NavBar'
 import DetailPage from './pages/DetailPage/DetailPage'
 import HomePage from './pages/HomePage/HomePage'
 import SearchPage from './pages/SearchPage/SearchPage'
+import StartPage from './pages/StartPage/StartPage'
 import getConcertsOfCity from './services/getConcertsOfCity'
+// import { loadFromLocal, saveToLocal } from './utils/localStorage'
 
 export default function App() {
   const history = useHistory()
@@ -14,7 +16,6 @@ export default function App() {
   const [concertId, setConcertId] = useState(null)
   const [currentCity, setCurrentCity] = useState('Bremen')
   const concertDetails = concerts.find(concert => concert.id === concertId)
-  const bookmarks = concerts.filter(concert => concert.isBookmarked)
 
   useEffect(() => {
     getConcertsOfCity(currentCity)
@@ -24,9 +25,20 @@ export default function App() {
       .catch(error => console.error(error))
   }, [currentCity])
 
+  const bookmarks = concerts.filter(concert => concert.isBookmarked)
+
+  // useEffect(() => {
+  //   saveToLocal('bookmarks', bookmarks)
+  // }, [bookmarks])
+  // console.log(localStorage)
+
   return (
     <>
       <Switch>
+        <Route path="/">
+          <StartPage pageName="Concert Life" onHome={handleClickHome} />
+        </Route>
+
         <Route path="/suche">
           <SearchPage
             pageName="Suche"
@@ -44,14 +56,15 @@ export default function App() {
             onBookmark={handleBookmark}
           />
         </Route>
-        <Route path="/">
+        <Route path="/home">
           <HomePage
-            pageName="ConcertLife"
+            pageName="Home"
             bookmarks={bookmarks}
             onNavigate={handleClickDetails}
           />
         </Route>
       </Switch>
+
       <Nav onSearch={handleClickSearch} onHome={handleClickHome} />
     </>
   )
@@ -74,7 +87,7 @@ export default function App() {
   }
 
   function handleClickHome() {
-    history.push('/')
+    history.push('/home')
   }
 
   function handleBookmark() {

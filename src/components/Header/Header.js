@@ -22,7 +22,7 @@ export default function Header({ pageName, onNavigate }) {
         )}
         <Title pageName={pageName} />
       </Wrapper>
-      <DividingLine />
+      {pageName === 'Concert Life' ? '' : <DividingLine />}
     </Heading>
   )
 }
