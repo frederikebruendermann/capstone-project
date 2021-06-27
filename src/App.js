@@ -8,13 +8,14 @@ import HomePage from './pages/HomePage/HomePage'
 import SearchPage from './pages/SearchPage/SearchPage'
 import StartPage from './pages/StartPage/StartPage'
 import getConcertsOfCity from './services/getConcertsOfCity'
-// import { loadFromLocal, saveToLocal } from './utils/localStorage'
+import { loadFromLocal, saveToLocal } from './utils/localStorage'
 
 export default function App() {
   const history = useHistory()
   const [concerts, setConcerts] = useState([])
   const [concertId, setConcertId] = useState(null)
   const [currentCity, setCurrentCity] = useState('Bremen')
+  const [newBookmarks, setNewBookmarks] = useState(loadFromLocal('bookmarks'))
   const concertDetails = concerts.find(concert => concert.id === concertId)
 
   useEffect(() => {
@@ -25,18 +26,15 @@ export default function App() {
       .catch(error => console.error(error))
   }, [currentCity])
 
-  const bookmarks = concerts.filter(concert => concert.isBookmarked)
-
-  // useEffect(() => {
-  //   saveToLocal('bookmarks', bookmarks)
-  // }, [bookmarks])
-  // console.log(localStorage)
+  useEffect(() => {
+    saveToLocal('bookmarks', newBookmarks)
+  }, [newBookmarks])
 
   return (
     <>
       <Switch>
-        <Route path="/">
-          <StartPage pageName="Concert Life" onHome={handleClickHome} />
+        <Route exact path="/">
+          <StartPage pageName="Concert Life" onStart={handleClickStart} />
         </Route>
 
         <Route path="/suche">
@@ -59,7 +57,7 @@ export default function App() {
         <Route path="/home">
           <HomePage
             pageName="Home"
-            bookmarks={bookmarks}
+            bookmarks={newBookmarks}
             onNavigate={handleClickDetails}
           />
         </Route>
@@ -90,9 +88,15 @@ export default function App() {
     history.push('/home')
   }
 
+  function handleClickStart() {
+    history.push('/home')
+  }
+
   function handleBookmark() {
     const index = concerts.findIndex(concert => concert.id === concertId)
     const concert = concerts[index]
+
+    setNewBookmarks([concert, ...newBookmarks])
 
     setConcerts([
       ...concerts.slice(0, index),

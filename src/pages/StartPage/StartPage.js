@@ -5,17 +5,21 @@ import BackgroundImg from './StartPicture.jpg'
 
 StartPage.propTypes = {
   pageName: PropTypes.string,
-  onHome: PropTypes.func,
 }
 
-export default function StartPage({ pageName, onHome }) {
+export default function StartPage({ pageName, onStart }) {
   return (
     <>
-      <Box onClick={onHome}>
-        <Header pageName={pageName} />
+      <Box>
+        <Header pageName={pageName} onClick={onStart} aria-label="button" />
         <SubText>Never miss a good concert again!</SubText>
       </Box>
-      <Background src={BackgroundImg} alt=""></Background>
+      <Background
+        onClick={onStart}
+        aria-label="button"
+        src={BackgroundImg}
+        alt=""
+      ></Background>
     </>
   )
 }
