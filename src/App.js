@@ -15,7 +15,7 @@ export default function App() {
   const [concerts, setConcerts] = useState([])
   const [concertId, setConcertId] = useState(null)
   const [currentCity, setCurrentCity] = useState('Bremen')
-  const [newBookmarks, setNewBookmarks] = useState(loadFromLocal('bookmarks'))
+  const [bookmarks, setBookmarks] = useState(loadFromLocal('bookmarks'))
   const concertDetails = concerts.find(concert => concert.id === concertId)
 
   useEffect(() => {
@@ -27,14 +27,18 @@ export default function App() {
   }, [currentCity])
 
   useEffect(() => {
-    saveToLocal('bookmarks', newBookmarks)
-  }, [newBookmarks])
+    saveToLocal('bookmarks', bookmarks)
+  }, [bookmarks])
 
   return (
     <>
       <Switch>
         <Route exact path="/">
-          <StartPage pageName="Concert Life" onStart={handleClickStart} />
+          <StartPage
+            pageName="Concert Life"
+            onStart={handleClickStart}
+            onSubmit={chosenCity}
+          />
         </Route>
 
         <Route path="/suche">
@@ -57,7 +61,7 @@ export default function App() {
         <Route path="/home">
           <HomePage
             pageName="Home"
-            bookmarks={newBookmarks}
+            bookmarks={bookmarks}
             onNavigate={handleClickDetails}
           />
         </Route>
@@ -69,6 +73,7 @@ export default function App() {
 
   function chosenCity(city) {
     setCurrentCity(city)
+    history.push('/suche')
   }
 
   function handleClickDetails(id) {
@@ -96,7 +101,7 @@ export default function App() {
     const index = concerts.findIndex(concert => concert.id === concertId)
     const concert = concerts[index]
 
-    setNewBookmarks([concert, ...newBookmarks])
+    setBookmarks([concert, ...bookmarks])
 
     setConcerts([
       ...concerts.slice(0, index),
