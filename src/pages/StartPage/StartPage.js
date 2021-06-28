@@ -58,7 +58,7 @@ const SearchForm = styled.form`
   display: flex;
   justify-content: center;
   grid-gap: 5px;
-  margin: 15px 10px 10px 25px;
+  margin: 20px 10px 15px 25px;
 `
 
 const SearchInputField = styled.input`
