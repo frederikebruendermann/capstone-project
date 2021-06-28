@@ -11,11 +11,20 @@ DetailPage.propTypes = {
 }
 
 export default function DetailPage({
-  concert,
+  concerts,
+  concertId,
+  bookmarks,
   onNavigate,
   pageName,
   onBookmark,
 }) {
+  let concert
+  if (bookmarks.some(bookmark => bookmark.id === concertId)) {
+    concert = bookmarks.find(bookmark => bookmark.id === concertId)
+  } else if (concerts.some(concert => concert.id === concertId)) {
+    concert = concerts.find(concert => concert.id === concertId)
+  }
+
   return (
     <div>
       <Heading pageName={pageName} onNavigate={onNavigate} />

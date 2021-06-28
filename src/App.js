@@ -16,8 +16,10 @@ export default function App() {
   const [concerts, setConcerts] = useState([])
   const [concertId, setConcertId] = useState(null)
   const [currentCity, setCurrentCity] = useState('Bremen')
-  const [bookmarks, setBookmarks] = useState(loadFromLocal('bookmarks'))
-  const concertDetails = concerts.find(concert => concert.id === concertId)
+  const [bookmarks, setBookmarks] = useState(loadFromLocal('bookmarks') ?? [])
+  // const concertDetails =
+  //   bookmarks?.find(bookmark => bookmark.id === concertId) ||
+  //   concerts?.find(concert => concert.id === concertId)
 
   useEffect(() => {
     getConcertsOfCity(currentCity)
@@ -54,7 +56,10 @@ export default function App() {
         <Route path="/details">
           <DetailPage
             pageName="Details"
-            concert={concertDetails}
+            // concert={concertDetails}
+            concerts={concerts}
+            concertId={concertId}
+            bookmarks={bookmarks}
             onNavigate={handleClickBack}
             onBookmark={handleBookmark}
           />
@@ -112,13 +117,18 @@ export default function App() {
   function handleBookmark() {
     const index = concerts.findIndex(concert => concert.id === concertId)
     const concert = concerts[index]
+    const bookmarkIndex = bookmarks.findIndex(
+      concert => concert.id === concertId
+    )
 
-    setBookmarks([concert, ...bookmarks])
-
-    setConcerts([
-      ...concerts.slice(0, index),
-      { ...concert, isBookmarked: !concert.isBookmarked },
-      ...concerts.slice(index + 1),
-    ])
+    if (!bookmarks.some(el => el.id === concert.id)) {
+      setBookmarks([{ ...concert, isBookmarked: true }, ...bookmarks])
+    } else {
+      history.push('/home')
+      setBookmarks([
+        ...bookmarks.slice(0, bookmarkIndex),
+        ...bookmarks.slice(bookmarkIndex + 1),
+      ])
+    }
   }
 }
