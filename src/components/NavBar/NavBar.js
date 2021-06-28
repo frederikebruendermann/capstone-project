@@ -4,13 +4,15 @@ import PropTypes from 'prop-types'
 NavBar.propTypes = {
   onSearch: PropTypes.func.isRequired,
   onHome: PropTypes.func.isRequired,
+  onCal: PropTypes.func.isRequired,
 }
 
-export default function NavBar({ onSearch, onHome }) {
+export default function NavBar({ onSearch, onHome, onCal }) {
   return (
     <Nav>
       <NavButton onClick={onHome}>HOME</NavButton>
       <NavButton onClick={onSearch}>SUCHE</NavButton>
+      <NavButton onClick={onCal}>KALENDER</NavButton>
     </Nav>
   )
 }
@@ -18,7 +20,7 @@ export default function NavBar({ onSearch, onHome }) {
 const Nav = styled.nav`
   display: grid;
   justify-items: center;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   position: fixed;
   background-color: var(--white);
   bottom: 0;

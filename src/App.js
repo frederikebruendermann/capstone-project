@@ -7,6 +7,7 @@ import DetailPage from './pages/DetailPage/DetailPage'
 import HomePage from './pages/HomePage/HomePage'
 import SearchPage from './pages/SearchPage/SearchPage'
 import StartPage from './pages/StartPage/StartPage'
+import CalenderPage from './pages/CalenderPage/CalenderPage'
 import getConcertsOfCity from './services/getConcertsOfCity'
 import { loadFromLocal, saveToLocal } from './utils/localStorage'
 
@@ -65,9 +66,16 @@ export default function App() {
             onNavigate={handleClickDetails}
           />
         </Route>
+        <Route path="/kalender">
+          <CalenderPage pageName="Kalender" />
+        </Route>
       </Switch>
 
-      <Nav onSearch={handleClickSearch} onHome={handleClickHome} />
+      <Nav
+        onSearch={handleClickSearch}
+        onHome={handleClickHome}
+        onCal={handleClickCal}
+      />
     </>
   )
 
@@ -95,6 +103,10 @@ export default function App() {
 
   function handleClickStart() {
     history.push('/home')
+  }
+
+  function handleClickCal() {
+    history.push('/kalender')
   }
 
   function handleBookmark() {
