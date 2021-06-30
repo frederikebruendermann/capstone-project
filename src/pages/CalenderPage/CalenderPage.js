@@ -34,12 +34,14 @@ CalenderPage.propTypes = {
   pageName: PropTypes.string,
   onNavigate: PropTypes.func,
   checkedConcerts: PropTypes.array,
+  selectedDay: PropTypes.instanceOf(Date),
 }
 
 export default function CalenderPage({
   onNavigate,
   pageName,
   checkedConcerts,
+  selectedDay,
 }) {
   return (
     <div>
@@ -51,6 +53,8 @@ export default function CalenderPage({
           weekdaysShort={WEEKDAYS_SHORT}
           months={MONTHS}
           firstDayOfWeek={1}
+          selectedDays={checkedConcerts.map(el => new Date(el.date))}
+          modifiers={new Date(2021, 7, 3)}
         />
       </CalWrapper>
       <CalenderList>
@@ -83,7 +87,16 @@ const CalenderList = styled.ul`
 `
 
 const Calender = styled(DayPicker)`
+  margin: 16px;
+  border-radius: 20px;
+  box-shadow: 34px 34px 89px var(--color-shadow-13);
+
   .DayPicker-Day--today {
     color: var(--purple);
+  }
+
+  .DayPicker-Day--selected {
+    background: var(--light-purple);
+    color: var(--color-gradient-2);
   }
 `

@@ -154,8 +154,7 @@ export default function App() {
         ...checkedConcerts.slice(0, checkedConcertIndex),
         ...checkedConcerts.slice(checkedConcertIndex + 1),
       ])
-
-      console.log(checkedConcerts)
     }
+    console.log(checkedConcerts)
   }
 }

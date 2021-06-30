@@ -24,16 +24,17 @@ export default function DetailPage({
   let concert
   if (bookmarks.some(bookmark => bookmark.id === concertId)) {
     concert = bookmarks.find(bookmark => bookmark.id === concertId)
-  } else if (concerts.some(concert => concert.id === concertId)) {
-    concert = concerts.find(concert => concert.id === concertId)
   } else if (
     checkedConcerts.some(checkedConcert => checkedConcert.id === concertId)
   ) {
     concert = checkedConcerts.find(
       checkedConcert => checkedConcert.id === concertId
     )
+  } else if (concerts.some(concert => concert.id === concertId)) {
+    concert = concerts.find(concert => concert.id === concertId)
   }
 
+  console.log(concert)
   return (
     <div>
       <Heading pageName={pageName} onNavigate={onNavigate} />

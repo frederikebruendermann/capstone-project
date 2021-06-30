@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 
 export default function Checkbox({ onClick, isChecked }) {
+  console.log(isChecked)
   return (
     <div>
       {' '}
