@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import DayPicker from 'react-day-picker'
 import 'react-day-picker/lib/style.css'
 import styled from 'styled-components/macro'
+import ConcertCard from '../../components/ConcertCard/ConcertCard'
 import Heading from '../../components/Header/Header'
 
 const MONTHS = [
@@ -30,21 +31,16 @@ const WEEKDAYS_LONG = [
 ]
 
 CalenderPage.propTypes = {
-  concerts: PropTypes.arrayOf(
-    PropTypes.shape({
-      date: PropTypes.string,
-      artist: PropTypes.string,
-      location: PropTypes.string,
-      id: PropTypes.string,
-      image3x2: PropTypes.string,
-      price: PropTypes.number,
-    })
-  ),
+  pageName: PropTypes.string,
+  onNavigate: PropTypes.func,
+  checkedConcerts: PropTypes.array,
 }
 
-export default function CalenderPage({ pageName }) {
-  // const date = concert.date
-
+export default function CalenderPage({
+  onNavigate,
+  pageName,
+  checkedConcerts,
+}) {
   return (
     <div>
       <Heading pageName={pageName} />
@@ -57,6 +53,19 @@ export default function CalenderPage({ pageName }) {
           firstDayOfWeek={1}
         />
       </CalWrapper>
+      <CalenderList>
+        {checkedConcerts.map(concert => (
+          <ConcertCard
+            key={concert.id}
+            date={concert.shortDate}
+            artist={concert.artist}
+            location={concert.location}
+            image3x2={concert.image3x2}
+            price={concert.price}
+            onClick={() => onNavigate(concert.id)}
+          />
+        ))}
+      </CalenderList>
     </div>
   )
 }
@@ -65,6 +74,12 @@ const CalWrapper = styled.section`
   display: flex;
   justify-content: center;
   margin-top: 75px;
+`
+const CalenderList = styled.ul`
+  padding: 5px;
+  display: grid;
+  justify-content: center;
+  overflow-y: auto;
 `
 
 const Calender = styled(DayPicker)`

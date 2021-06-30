@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import Bookmark from '../../components/Bookmark/Bookmark'
+import Checkbox from '../../components/Checkbox/Checkbox'
 import Heading from '../../components/Header/Header'
 
 DetailPage.propTypes = {
@@ -14,8 +15,10 @@ export default function DetailPage({
   concerts,
   concertId,
   bookmarks,
+  checkedConcerts,
   onNavigate,
   pageName,
+  onCheck,
   onBookmark,
 }) {
   let concert
@@ -23,6 +26,12 @@ export default function DetailPage({
     concert = bookmarks.find(bookmark => bookmark.id === concertId)
   } else if (concerts.some(concert => concert.id === concertId)) {
     concert = concerts.find(concert => concert.id === concertId)
+  } else if (
+    checkedConcerts.some(checkedConcert => checkedConcert.id === concertId)
+  ) {
+    concert = checkedConcerts.find(
+      checkedConcert => checkedConcert.id === concertId
+    )
   }
 
   return (
@@ -58,6 +67,17 @@ export default function DetailPage({
             </tr>
           </Facts>
         </DetailsContainer>
+        <CalenderBox>
+          Speichere das Konzert in meinem Kalender!
+          <CalCheck
+            type="checkbox"
+            id="addToCalender"
+            name="add"
+            value="calenderEntry"
+            isChecked={concert.isChecked}
+            onClick={onCheck}
+          ></CalCheck>
+        </CalenderBox>
       </Wrapper>
     </div>
   )
@@ -76,6 +96,7 @@ const Wrapper = styled.div`
     'Artist Artist Artist'
     'Details Details Details';
 `
+const CalCheck = styled(Checkbox)``
 
 const Image = styled.img`
   width: 100%;
@@ -106,4 +127,8 @@ const DetailsContainer = styled.table`
 `
 const Facts = styled.tbody`
   letter-spacing: 0.1rem;
+`
+const CalenderBox = styled.section`
+  font-size: 15px;
+  margin: 40px 20px;
 `

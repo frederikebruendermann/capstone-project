@@ -17,9 +17,9 @@ export default function App() {
   const [concertId, setConcertId] = useState(null)
   const [currentCity, setCurrentCity] = useState('Bremen')
   const [bookmarks, setBookmarks] = useState(loadFromLocal('bookmarks') ?? [])
-  // const concertDetails =
-  //   bookmarks?.find(bookmark => bookmark.id === concertId) ||
-  //   concerts?.find(concert => concert.id === concertId)
+  const [checkedConcerts, setCheckedConcerts] = useState(
+    loadFromLocal('checkedConcerts') ?? []
+  )
 
   useEffect(() => {
     getConcertsOfCity(currentCity)
@@ -32,6 +32,10 @@ export default function App() {
   useEffect(() => {
     saveToLocal('bookmarks', bookmarks)
   }, [bookmarks])
+
+  useEffect(() => {
+    saveToLocal('checkedConcerts', checkedConcerts)
+  }, [checkedConcerts])
 
   return (
     <>
@@ -56,12 +60,13 @@ export default function App() {
         <Route path="/details">
           <DetailPage
             pageName="Details"
-            // concert={concertDetails}
             concerts={concerts}
             concertId={concertId}
             bookmarks={bookmarks}
+            checkedConcerts={checkedConcerts}
             onNavigate={handleClickBack}
             onBookmark={handleBookmark}
+            onCheck={handleCheckedConcerts}
           />
         </Route>
         <Route path="/home">
@@ -72,7 +77,11 @@ export default function App() {
           />
         </Route>
         <Route path="/kalender">
-          <CalenderPage pageName="Kalender" />
+          <CalenderPage
+            pageName="Kalender"
+            checkedConcerts={checkedConcerts}
+            onNavigate={handleClickDetails}
+          />
         </Route>
       </Switch>
 
@@ -129,6 +138,24 @@ export default function App() {
         ...bookmarks.slice(0, bookmarkIndex),
         ...bookmarks.slice(bookmarkIndex + 1),
       ])
+    }
+  }
+
+  function handleCheckedConcerts() {
+    const index = concerts.findIndex(concert => concert.id === concertId)
+    const concert = concerts[index]
+    const checkedConcertIndex = checkedConcerts.findIndex(
+      concert => concert.id === concertId
+    )
+    if (!checkedConcerts.some(el => el.id === concert.id)) {
+      setCheckedConcerts([{ ...concert, isChecked: true }, ...checkedConcerts])
+    } else {
+      setCheckedConcerts([
+        ...checkedConcerts.slice(0, checkedConcertIndex),
+        ...checkedConcerts.slice(checkedConcertIndex + 1),
+      ])
+
+      console.log(checkedConcerts)
     }
   }
 }

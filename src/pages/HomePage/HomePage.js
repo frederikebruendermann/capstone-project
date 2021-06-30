@@ -5,7 +5,6 @@ import Heading from '../../components/Header/Header'
 
 HomePage.propTypes = {
   pageName: PropTypes.string,
-  onNavigate: PropTypes.func,
   bookmarks: PropTypes.array,
 }
 
