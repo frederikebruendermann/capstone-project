@@ -21,7 +21,7 @@ export default function SearchPage({
   return (
     <main>
       <Heading pageName={pageName} />
-      <SearchInput onSubmit={onSubmit} />
+      <SearchInput onSubmit={onSubmit} autocomplete="off" />
       <ConcertList>
         {concerts.map(concert => (
           <ConcertCard

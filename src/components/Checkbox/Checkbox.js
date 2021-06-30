@@ -1,10 +1,8 @@
 import styled from 'styled-components/macro'
 
 export default function Checkbox({ onClick, isChecked }) {
-  console.log(isChecked)
   return (
     <div>
-      {' '}
       <CalCheck
         type="checkbox"
         id="addToCalender"
@@ -18,11 +16,14 @@ export default function Checkbox({ onClick, isChecked }) {
 }
 
 const CalCheck = styled.input`
-  width: 1em;
-  height: 1em;
+  width: 1.5em;
+  height: 1.5em;
   border: 0.8px solid gray;
+  display: inline-block;
+  content: '';
+  background-color: var(--purple);
 
-  :checked {
+  ::checked {
     color: var(--purple);
   }
 `

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import DayPicker from 'react-day-picker'
 import 'react-day-picker/lib/style.css'
 import styled from 'styled-components/macro'
-import ConcertCard from '../../components/ConcertCard/ConcertCard'
+import DividingLine from '../../components/DividingLine/DividingLine'
 import Heading from '../../components/Header/Header'
 
 const MONTHS = [
@@ -41,7 +41,6 @@ export default function CalenderPage({
   onNavigate,
   pageName,
   checkedConcerts,
-  selectedDay,
 }) {
   return (
     <div>
@@ -54,20 +53,26 @@ export default function CalenderPage({
           months={MONTHS}
           firstDayOfWeek={1}
           selectedDays={checkedConcerts.map(el => new Date(el.date))}
-          modifiers={new Date(2021, 7, 3)}
+          fixedWeeks
         />
       </CalWrapper>
+      <TitleSmall>Next</TitleSmall>
+      <DividingLine />
       <CalenderList>
         {checkedConcerts.map(concert => (
-          <ConcertCard
+          <ConcertCardSmall
             key={concert.id}
             date={concert.shortDate}
             artist={concert.artist}
             location={concert.location}
-            image3x2={concert.image3x2}
-            price={concert.price}
             onClick={() => onNavigate(concert.id)}
-          />
+          >
+            <div>
+              <span>{concert.shortDate}</span>
+              <span>- {concert.artist}</span>
+              {/* <span>{concert.location}</span> */}
+            </div>
+          </ConcertCardSmall>
         ))}
       </CalenderList>
     </div>
@@ -79,6 +84,22 @@ const CalWrapper = styled.section`
   justify-content: center;
   margin-top: 75px;
 `
+
+const TitleSmall = styled.h2`
+  display: grid;
+  justify-content: center;
+  font-size: 15px;
+  margin-bottom: 10px;
+`
+
+const ConcertCardSmall = styled.div`
+  box-shadow: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'Text Image';
+`
+
 const CalenderList = styled.ul`
   padding: 5px;
   display: grid;
@@ -92,11 +113,12 @@ const Calender = styled(DayPicker)`
   box-shadow: 34px 34px 89px var(--color-shadow-13);
 
   .DayPicker-Day--today {
-    color: var(--purple);
+    color: var(--white);
+    background: var(--light-purple);
   }
 
   .DayPicker-Day--selected {
     background: var(--light-purple);
-    color: var(--color-gradient-2);
+    color: var(--purple);
   }
 `

@@ -34,7 +34,6 @@ export default function DetailPage({
     concert = concerts.find(concert => concert.id === concertId)
   }
 
-  console.log(concert)
   return (
     <div>
       <Heading pageName={pageName} onNavigate={onNavigate} />
@@ -132,4 +131,6 @@ const Facts = styled.tbody`
 const CalenderBox = styled.section`
   font-size: 15px;
   margin: 40px 20px;
+  display: flex;
+  align-items: center;
 `
