@@ -84,7 +84,7 @@ const SubText = styled.p`
 
 const Background = styled.img`
   width: 100%;
-  z-index: 1;
+  /* z-index: 1; */
   margin-top: 95px;
   position: relative;
 `
