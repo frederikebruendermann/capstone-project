@@ -121,4 +121,9 @@ const Calender = styled(DayPicker)`
     background: var(--light-purple);
     color: var(--purple);
   }
+
+  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover,
+  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+    background-color: var(--purple);
+  }
 `
