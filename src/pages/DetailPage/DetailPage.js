@@ -130,7 +130,8 @@ const Facts = styled.tbody`
 `
 const CalenderBox = styled.section`
   font-size: 15px;
-  margin: 40px 20px;
+  text-align: left;
+  margin: 60px 20px;
   display: flex;
-  align-items: center;
+  justify-content: center;
 `

@@ -1,17 +1,44 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
+import DividingLine from '../../components/DividingLine/DividingLine'
+import Slider from '../../components/Slider'
 import ConcertCard from '../../components/ConcertCard/ConcertCard'
 import Heading from '../../components/Header/Header'
 
 HomePage.propTypes = {
   pageName: PropTypes.string,
   bookmarks: PropTypes.array,
+  checkedConcerts: PropTypes.array,
 }
 
-export default function HomePage({ bookmarks, pageName, onNavigate }) {
+export default function HomePage({
+  bookmarks,
+  pageName,
+  onNavigate,
+  checkedConcerts,
+}) {
   return (
     <Wrapper>
       <Heading pageName={pageName} />
+      <NextBox>
+        <h2>Nächste Konzerte</h2>
+        {checkedConcerts.length === 0 ? (
+          <Text>Du hast noch keine Konzerte in den Kalender eingetragen.</Text>
+        ) : (
+          <HomeSlider>
+            {checkedConcerts.map(concert => (
+              <Slider
+                key={concert.id}
+                date={concert.shortDate}
+                artist={concert.artist}
+                image3x2={concert.image3x2}
+                onClick={() => onNavigate(concert.id)}
+              />
+            ))}
+          </HomeSlider>
+        )}
+      </NextBox>
+      <DividingLine />
       <Hint>
         <BookmarkInactive>☆</BookmarkInactive>
         <h2>Merkliste</h2>
@@ -39,11 +66,26 @@ export default function HomePage({ bookmarks, pageName, onNavigate }) {
   )
 }
 
+const HomeSlider = styled.div`
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  ::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+`
+
 const Hint = styled.div`
-  margin: 75px 10px 10px;
+  margin: 10px 10px 10px;
   display: flex;
   align-items: center;
   gap: 10px;
+`
+
+const NextBox = styled.div`
+  margin: 75px 10px 10px;
 `
 
 const Wrapper = styled.section`

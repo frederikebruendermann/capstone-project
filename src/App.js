@@ -73,6 +73,7 @@ export default function App() {
           <HomePage
             pageName="Home"
             bookmarks={bookmarks}
+            checkedConcerts={checkedConcerts}
             onNavigate={handleClickDetails}
           />
         </Route>
