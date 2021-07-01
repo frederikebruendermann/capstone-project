@@ -15,7 +15,7 @@ export default function App() {
   const history = useHistory()
   const [concerts, setConcerts] = useState([])
   const [concertId, setConcertId] = useState(null)
-  const [currentCity, setCurrentCity] = useState('Bremen')
+  const [currentCity, setCurrentCity] = useState('Hamburg')
   const [bookmarks, setBookmarks] = useState(loadFromLocal('bookmarks') ?? [])
   const [checkedConcerts, setCheckedConcerts] = useState(
     loadFromLocal('checkedConcerts') ?? []

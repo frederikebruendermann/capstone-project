@@ -41,7 +41,7 @@ export default function HomePage({
       <DividingLine />
       <Hint>
         <BookmarkInactive>☆</BookmarkInactive>
-        <h2>Merkliste</h2>
+        <h2> Merkliste</h2>
       </Hint>
       <div>
         {bookmarks.length === 0 ? (
