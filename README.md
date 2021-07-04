@@ -13,7 +13,8 @@ Stay tuned to see the development within the next weeks 💻
 
 # Screenshots!
 
-[ConcertLife_Overview](https://user-images.githubusercontent.com/82148810/124397354-9ccf2080-dd0f-11eb-8b28-53b8ddb11a9d.png)
+![ConcertLife_Overview](https://user-images.githubusercontent.com/82148810/124397366-af495a00-dd0f-11eb-99d3-09e1e2c89318.png)
+
 
 
 # Tech Stack
