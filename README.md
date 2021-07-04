@@ -9,7 +9,12 @@ Stay tuned to see the development within the next weeks 💻
 
 # Demo
 
-[Have a look at ConcertLife on Vercel 👀](https://capstone-project-d0rujfysr-frederikebruendermann.vercel.app/)
+[Have a look at ConcertLife on Vercel 👀](https://capstone-project-eosin.vercel.app/)
+
+# Screenshots!
+
+[ConcertLife_Overview](https://user-images.githubusercontent.com/82148810/124397354-9ccf2080-dd0f-11eb-8b28-53b8ddb11a9d.png)
+
 
 # Tech Stack
 - React
